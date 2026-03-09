@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ChatGPT vs Claude vs OpenClaw — Borja Iturregui</title>
+<meta name="description" content="La carrera actual de la inteligencia artificial: análisis técnico y comparativo de los tres grandes actores de la IA conversacional en 2026." />
+<meta property="og:title" content="ChatGPT vs Claude vs OpenClaw: la carrera actual de la IA" />
+<meta property="og:description" content="Análisis técnico comparativo de los tres grandes actores de la IA en 2026." />
+<meta property="og:url" content="https://borjaiturregui.github.io/blog/ia-carrera-2026.html" />
+<meta property="og:type" content="article" />
+<meta name="author" content="Borja Iturregui" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://borjaiturregui.github.io/blog/ia-carrera-2026.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPT vs Claude vs OpenClaw: la carrera actual de la inteligencia artificial",
+  "author": { "@type": "Person", "name": "Borja Iturregui" },
+  "datePublished": "2026-03-07",
+  "url": "https://borjaiturregui.github.io/blog/ia-carrera-2026.html"
+}
+</script>
+<!-- GA4 → sustituye G-XXXXXXXXXX por tu Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --black:#000000; --surface:#111111; --card:#161616; --border:#1e1e1e;
+  --red:#7B1A2E; --red-hi:#B22948; --red-dim:rgba(123,26,46,0.18);
+  --white:#ffffff; --muted:#888888; --dim:#333333; --green:#3fb950;
+  --mono:'Share Tech Mono',monospace; --display:'Syne',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--mono);overflow-x:hidden;cursor:crosshair;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);pointer-events:none;z-index:999;}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.35;z-index:0;pointer-events:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(0,0,0,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:0.5px;color:var(--white);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--red-hi);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--red-hi);}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:crosshair;padding:4px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
+.nav-burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.active span:nth-child(2){opacity:0;}
+.nav-burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{display:none;flex-direction:column;background:rgba(0,0,0,0.97);border-top:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;}
+.nav-drawer.open{max-height:320px;padding:8px 0;}
+.nav-drawer a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px 24px;border-bottom:1px solid var(--border);transition:color 0.2s,background 0.2s;}
+.nav-drawer a:last-child{border-bottom:none;}
+.nav-drawer a:hover{color:var(--red-hi);background:rgba(178,41,72,0.05);}
+@media(max-width:680px){.nav-links{display:none;}.nav-burger{display:flex;}.nav-drawer{display:flex;}}
+.article-wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:96px 24px 72px;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:40px;}
+.breadcrumb a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--red-hi);}
+.breadcrumb span{color:var(--dim);}
+.breadcrumb .current{color:var(--white);}
+.article-header{margin-bottom:48px;}
+.article-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;}
+.meta-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red-hi);background:var(--red-dim);border:1px solid rgba(178,41,72,0.3);border-radius:2px;padding:3px 8px;}
+.meta-date{font-size:11px;color:var(--muted);letter-spacing:1px;}
+.meta-read{font-size:11px;color:var(--dim);letter-spacing:1px;}
+.article-title{font-family:var(--display);font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1.15;letter-spacing:-1px;margin-bottom:20px;}
+.article-title .accent{color:var(--red-hi);}
+.article-subtitle{font-size:14px;color:var(--muted);line-height:1.8;max-width:620px;border-left:2px solid var(--red);padding-left:16px;}
+.article-divider{height:1px;background:linear-gradient(90deg,var(--red),var(--border),transparent);margin:40px 0;}
+.article-body{line-height:1.9;}
+.article-body h2{font-family:var(--display);font-size:22px;font-weight:800;color:var(--white);margin:48px 0 16px;letter-spacing:-0.5px;display:flex;align-items:center;gap:12px;}
+.article-body h2 .h2-num{font-family:var(--mono);font-size:11px;color:var(--red-hi);letter-spacing:2px;font-weight:400;opacity:0.8;}
+.article-body h3{font-family:var(--display);font-size:16px;font-weight:700;color:var(--white);margin:28px 0 12px;}
+.article-body p{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.95;}
+.article-body strong{color:var(--white);}
+.article-body em{color:var(--red-hi);font-style:normal;}
+.compare-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:12px;}
+.compare-table th{font-family:var(--display);font-size:12px;font-weight:700;color:var(--white);text-align:left;padding:10px 14px;background:var(--surface);border:1px solid var(--border);letter-spacing:0.5px;}
+.compare-table th.col-chatgpt{color:#74aa9c;}
+.compare-table th.col-claude{color:#c07a3a;}
+.compare-table th.col-openclaw{color:var(--red-hi);}
+.compare-table td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.6;}
+.compare-table tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+.compare-table td:first-child{color:var(--white);font-size:11px;letter-spacing:0.5px;white-space:nowrap;background:var(--card);}
+.model-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+@media(max-width:600px){.model-cards{grid-template-columns:1fr;}}
+.model-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px;transition:border-color 0.2s;}
+.model-card:hover{border-color:var(--dim);}
+.model-card.chatgpt{border-top:2px solid #74aa9c;}
+.model-card.claude{border-top:2px solid #c07a3a;}
+.model-card.openclaw{border-top:2px solid var(--red-hi);}
+.model-card .mc-name{font-family:var(--display);font-size:15px;font-weight:800;margin-bottom:4px;}
+.model-card.chatgpt .mc-name{color:#74aa9c;}
+.model-card.claude .mc-name{color:#c07a3a;}
+.model-card.openclaw .mc-name{color:var(--red-hi);}
+.model-card .mc-org{font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.model-card .mc-desc{font-size:11px;color:var(--muted);line-height:1.7;}
+/* CEO CARDS */
+.ceo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0;}
+@media(max-width:600px){.ceo-cards{grid-template-columns:1fr;}}
+.ceo-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px;}
+.ceo-card .ceo-name{font-family:var(--display);font-size:14px;font-weight:800;color:var(--white);margin-bottom:2px;}
+.ceo-card .ceo-role{font-size:10px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;}
+.ceo-card .ceo-quote{font-size:11px;color:var(--muted);line-height:1.75;border-left:2px solid var(--red);padding-left:10px;font-style:italic;}
+.timeline{margin:28px 0;display:flex;flex-direction:column;gap:0;}
+.timeline-item{display:flex;gap:16px;padding-bottom:24px;position:relative;}
+.timeline-item:last-child{padding-bottom:0;}
+.tl-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:32px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--red);border:2px solid var(--red-hi);flex-shrink:0;margin-top:4px;}
+.tl-line{flex:1;width:1px;background:var(--border);margin-top:4px;}
+.timeline-item:last-child .tl-line{display:none;}
+.tl-year{font-size:10px;color:var(--red-hi);letter-spacing:1px;margin-bottom:4px;}
+.tl-text{font-size:12px;color:var(--muted);line-height:1.7;}
+.callout{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--red-hi);border-radius:4px;padding:16px 20px;margin:24px 0;font-size:13px;color:var(--muted);line-height:1.8;}
+.callout .callout-title{font-family:var(--display);font-size:12px;font-weight:700;color:var(--red-hi);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.callout.green{border-left-color:var(--green);}
+.callout.green .callout-title{color:var(--green);}
+.verdict-chips{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0;}
+.verdict-chip{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:4px;padding:10px 14px;font-size:12px;}
+.vc-label{color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase;}
+.vc-winner{color:var(--white);font-weight:700;font-family:var(--display);font-size:14px;}
+.vc-reason{font-size:11px;color:var(--dim);margin-top:2px;}
+.conclusion-box{background:linear-gradient(135deg,var(--surface),var(--card));border:1px solid var(--red);border-radius:4px;padding:28px;margin:40px 0;}
+.conclusion-box .cb-title{font-family:var(--display);font-size:18px;font-weight:800;color:var(--white);margin-bottom:16px;}
+.conclusion-box p{font-size:13px;color:var(--muted);line-height:1.9;margin-bottom:12px;}
+.conclusion-box p:last-child{margin-bottom:0;}
+.article-nav{display:flex;justify-content:space-between;align-items:center;margin-top:64px;padding-top:32px;border-top:1px solid var(--border);gap:16px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:2px;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.2s;cursor:crosshair;}
+.btn-ghost{background:transparent;color:var(--white);border:1px solid var(--dim);}
+.btn-ghost:hover{border-color:var(--white);}
+.btn-primary{background:var(--red);color:var(--white);border:1px solid var(--red);}
+.btn-primary:hover{background:var(--red-hi);border-color:var(--red-hi);}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);max-width:900px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+footer p{font-size:11px;color:var(--dim);}
+footer span{color:var(--red-hi);}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{animation:fadeup 0.8s ease both;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html"><span>&gt;</span> borja</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="../index.html#skills">Habilidades</a></li>
+      <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="../blog/" class="active">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="drawer">
+    <a href="../index.html#proyectos" onclick="closeMenu()">Proyectos</a>
+    <a href="../index.html#skills" onclick="closeMenu()">Habilidades</a>
+    <a href="../index.html#sobre-mi" onclick="closeMenu()">Sobre mí</a>
+    <a href="../blog/" onclick="closeMenu()">Blog</a>
+    <a href="../index.html#contacto" onclick="closeMenu()">Contacto</a>
+  </div>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb fade-in">
+    <a href="../index.html">Inicio</a>
+    <span>/</span>
+    <a href="../blog/">Blog</a>
+    <span>/</span>
+    <span class="current">ChatGPT vs Claude vs OpenClaw</span>
+  </div>
+
+  <header class="article-header fade-in">
+    <div class="article-meta">
+      <span class="meta-tag">Inteligencia Artificial</span>
+      <span class="meta-tag">Análisis</span>
+      <span class="meta-date">Marzo 2026</span>
+      <span class="meta-read">· 14 min lectura</span>
+    </div>
+    <h1 class="article-title">
+      ChatGPT vs Claude vs OpenClaw:<br>
+      <span class="accent">la carrera actual de la IA</span>
+    </h1>
+    <p class="article-subtitle">
+      En 2026, la inteligencia artificial ya no es una promesa tecnológica: es infraestructura.
+      Tres actores lideran la carrera con filosofías radicalmente distintas.
+      Pero la carrera no la gana quien tiene el modelo más grande.
+    </p>
+  </header>
+
+  <div class="article-divider"></div>
+
+  <article class="article-body">
+
+    <!-- 1. INTRODUCCIÓN -->
+    <h2 class="reveal"><span class="h2-num">01 ·</span> Introducción</h2>
+    <p class="reveal">
+      El 30 de noviembre de 2022, OpenAI publicó un post en X con un tono casi disculpatorio:
+      <em>"Estamos lanzando ChatGPT para obtener feedback de los usuarios."</em>
+      En cinco días, un millón de personas lo habían probado. En dos meses, cien millones.
+      Lo que empezó como una demo de investigación se convirtió en el producto de consumo
+      de mayor crecimiento en la historia de internet. Tres años después, el mundo ya no es el mismo.
+    </p>
+    <p class="reveal">
+      La expansión de la IA conversacional ha sido tan rápida que resulta difícil mantener el mapa actualizado.
+      ChatGPT abrió la puerta, Claude llegó con una filosofía completamente distinta, y OpenClaw —
+      creado por una sola persona desde su apartamento — demostró en semanas que el siguiente capítulo
+      de la IA no lo escribirán necesariamente los laboratorios con miles de empleados y miles de millones
+      de inversión. Los tres representan algo más que productos: representan visiones del mundo.
+    </p>
+
+    <div class="model-cards reveal">
+      <div class="model-card chatgpt">
+        <div class="mc-name">ChatGPT</div>
+        <div class="mc-org">OpenAI · Sam Altman</div>
+        <div class="mc-desc">Accesibilidad masiva y productividad. El modelo más adoptado del mundo, con un ecosistema de integraciones sin precedentes.</div>
+      </div>
+      <div class="model-card claude">
+        <div class="mc-name">Claude</div>
+        <div class="mc-org">Anthropic · Dario Amodei</div>
+        <div class="mc-desc">Seguridad, ética y alineación con valores humanos. Construido desde el principio para ser útil sin ser peligroso.</div>
+      </div>
+      <div class="model-card openclaw">
+        <div class="mc-name">OpenClaw</div>
+        <div class="mc-org">Open Source · Peter Steinberger</div>
+        <div class="mc-desc">Un agente autónomo que actúa sin que le preguntes. No compite en el mismo terreno que los otros dos — juega en otro nivel.</div>
+      </div>
+    </div>
+
+    <p class="reveal">
+      Antes de entrar en el análisis, hay que aclarar algo importante:
+      <strong>OpenClaw no es un modelo de lenguaje</strong>. No compite con GPT ni con Claude
+      en el sentido técnico. Es un agente autónomo de código abierto que usa por debajo
+      esos mismos modelos. La pregunta que guía este artículo no es solo cuál es mejor,
+      sino <em>qué tipo de futuro representa cada uno</em>.
+    </p>
+
+    <!-- VISIÓN DE LOS CREADORES -->
+    <h2 class="reveal"><span class="h2-num">02 ·</span> La visión de quienes los construyen</h2>
+    <p class="reveal">
+      Las diferencias entre estos tres proyectos se entienden mejor mirando a quienes están detrás.
+      No es solo una cuestión técnica: es ideológica.
+    </p>
+
+    <div class="ceo-cards reveal">
+      <div class="ceo-card">
+        <div class="ceo-name">Sam Altman</div>
+        <div class="ceo-role">CEO · OpenAI</div>
+        <div class="ceo-quote">
+          "ChatGPT ya es más poderoso que cualquier ser humano que haya existido."
+          Su visión es la de escala máxima: democratizar la IA hasta que sea tan ubicua como la electricidad.
+          Altman ve el riesgo pero apuesta por avanzar rápido y regular después.
+        </div>
+      </div>
+      <div class="ceo-card">
+        <div class="ceo-name">Dario Amodei</div>
+        <div class="ceo-role">CEO · Anthropic</div>
+        <div class="ceo-quote">
+          Publicó en 2024 "Machines of Loving Grace" y en 2026 "The Adolescence of Technology",
+          donde identifica cinco categorías de riesgo real de la IA. Su visión: construir primero
+          el modelo más seguro del mundo, y luego el más poderoso. En ese orden.
+        </div>
+      </div>
+      <div class="ceo-card">
+        <div class="ceo-name">Peter Steinberger</div>
+        <div class="ceo-role">Creador · OpenClaw</div>
+        <div class="ceo-quote">
+          "Quiero construir el agente que hasta mi madre pueda usar."
+          Steinberger es un desarrollador austriaco que creó OpenClaw porque estaba harto de que no existiera.
+          Su visión: la IA que <em>hace cosas</em>, no la que espera a que le preguntes.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. ORIGEN Y EVOLUCIÓN -->
+    <h2 class="reveal"><span class="h2-num">03 ·</span> Origen y evolución</h2>
+
+    <h3 class="reveal">ChatGPT — de demo de investigación a plataforma global</h3>
+    <p class="reveal">
+      OpenAI llevaba años construyendo modelos de lenguaje antes de que el mundo los conociera.
+      GPT-3 (2020) demostró que el escalado masivo de parámetros producía capacidades emergentes
+      sorprendentes. ChatGPT llegó en noviembre de 2022 como interfaz conversacional sobre GPT-3.5,
+      y la reacción del mercado fue inmediata. GPT-4 se publicó en marzo de 2023 con razonamiento
+      multimodal y mejoras sustanciales en coherencia y precisión en dominios especializados.
+      La integración en <strong>Microsoft 365 y GitHub Copilot</strong> fue el salto definitivo
+      hacia la adopción empresarial masiva — ChatGPT dejó de ser una herramienta técnica para
+      convertirse en infraestructura de oficina. En 2025, la familia GPT-5 consolidó ese liderazgo
+      con múltiples versiones especializadas (GPT-5.1, GPT-5.2, GPT-5.3-Codex), llegando a
+      <strong>800 millones de usuarios semanales</strong> a finales de ese año.
+    </p>
+
+    <h3 class="reveal">Claude — cuando la seguridad no es un añadido sino el producto</h3>
+    <p class="reveal">
+      En diciembre de 2020, Dario Amodei — entonces VP de Investigación de OpenAI — y un grupo
+      de colegas tomaron una decisión que definiría el sector: abandonar OpenAI por diferencias
+      fundamentales sobre el ritmo y la dirección del desarrollo. En 2021 fundaron Anthropic
+      junto a otros seis ex-empleados de OpenAI, entre ellos su hermana Daniela Amodei como presidenta.
+    </p>
+    <p class="reveal">
+      El primer Claude se entrenó en el verano de 2022, pero Anthropic decidió no publicarlo:
+      necesitaban más pruebas de seguridad interna y no querían precipitar una carrera que ya
+      intuían inevitable. Meses después, OpenAI lanzó ChatGPT y la carrera comenzó sin ellos.
+      Claude llegó al público en <strong>marzo de 2023</strong>, casi un año después que ChatGPT.
+      Su diferencia técnica fundamental es <strong>Constitutional AI</strong>: en lugar de entrenar
+      el modelo solo con feedback humano, se le entrena con principios constitucionales explícitos
+      que guían su razonamiento. En 2025, la llegada de Claude 4 —con mejoras sustanciales en
+      código, razonamiento extendido y alineación— consolidó a Anthropic como la alternativa seria
+      para entornos donde la fiabilidad no es opcional. En febrero de 2026, Anthropic fue valorada
+      en <strong>380.000 millones de dólares</strong>.
+    </p>
+
+    <h3 class="reveal">OpenClaw — una persona, tres meses, doscientas mil estrellas en GitHub</h3>
+    <p class="reveal">
+      En noviembre de 2025, Peter Steinberger — desarrollador austriaco, ex-fundador de PSPDFKit —
+      subió un proyecto a GitHub llamado Clawdbot. No era un nuevo modelo de lenguaje.
+      Era un <strong>agente autónomo de código abierto</strong> que se ejecuta en tu propia máquina
+      y usa Claude, GPT o DeepSeek como cerebro, mientras él se encarga de actuar:
+      gestionar correos, reservar vuelos, navegar la web, ejecutar scripts, todo desde
+      WhatsApp o Telegram. Su lema era claro: <em>"the AI that actually does things"</em>.
+    </p>
+    <p class="reveal">
+      Lo que siguió fue una de las explosiones virales más rápidas en la historia de GitHub.
+      Después de un cambio de nombre forzado por Anthropic (Clawdbot → Moltbot → OpenClaw),
+      el proyecto alcanzó <strong>247.000 estrellas en GitHub</strong> en apenas tres meses.
+      El 14 de febrero de 2026, Sam Altman anunció que Steinberger se unía a OpenAI —
+      donde seguirá desarrollando el proyecto, que ha pasado a una fundación de código abierto.
+      OpenClaw no es una empresa. No es un laboratorio. Es lo que ocurre cuando una sola persona
+      con criterio construye lo que necesita y el mundo descubre que lo necesitaba también.
+    </p>
+
+    <div class="callout reveal">
+      <div class="callout-title">Línea temporal — hitos clave</div>
+      <div class="timeline" style="margin-top:16px;">
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div><div class="tl-year">2020–2021</div><div class="tl-text">GPT-3 demuestra el poder del escalado. Dario Amodei y colegas abandonan OpenAI. Anthropic se funda en 2021 con foco en seguridad.</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div><div class="tl-year">Nov 2022</div><div class="tl-text">ChatGPT lanza sobre GPT-3.5 como "demo de investigación". 1 millón de usuarios en 5 días. La carrera comienza.</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div><div class="tl-year">Mar 2023</div><div class="tl-text">GPT-4 llega con razonamiento multimodal. Claude 1 debuta públicamente, casi un año después que ChatGPT. Microsoft integra ChatGPT en Bing.</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div><div class="tl-year">2024</div><div class="tl-text">GPT-4o con capacidades en tiempo real. Claude 3 y 3.5 Sonnet marcan un antes y después en benchmarks de razonamiento y código. ChatGPT supera los 200M usuarios semanales.</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div><div class="tl-line"></div></div>
+          <div><div class="tl-year">2025</div><div class="tl-text">Claude 4 (Opus y Sonnet) consolida el liderazgo de Anthropic en código y razonamiento. GPT-5 consolida el ecosistema de OpenAI con 800M usuarios semanales. En noviembre, Steinberger sube Clawdbot a GitHub.</div></div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-left"><div class="tl-dot"></div></div>
+          <div><div class="tl-year">Ene–Feb 2026</div><div class="tl-text">OpenClaw explota viralmente: 247K estrellas en GitHub en semanas. El 14 de febrero, Steinberger se une a OpenAI. Anthropic alcanza valoración de 380.000M$. El mapa de la IA se redibuja.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. CARACTERÍSTICAS TÉCNICAS -->
+    <h2 class="reveal"><span class="h2-num">04 ·</span> Características técnicas</h2>
+    <p class="reveal">
+      Comparar estos tres proyectos en una tabla es complicado porque no juegan en el mismo campo.
+      ChatGPT y Claude son modelos de lenguaje que esperan tu input. OpenClaw es un agente
+      que actúa de forma autónoma usando esos mismos modelos. Aún así, la comparación es útil
+      para entender dónde está cada uno.
+    </p>
+
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th>Característica</th>
+          <th class="col-chatgpt">ChatGPT</th>
+          <th class="col-claude">Claude</th>
+          <th class="col-openclaw">OpenClaw</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tipo</td>
+          <td>LLM + chatbot</td>
+          <td>LLM + chatbot</td>
+          <td>Agente autónomo open source</td>
+        </tr>
+        <tr>
+          <td>Modelo base</td>
+          <td>GPT-5 (familia)</td>
+          <td>Claude 4 (Opus/Sonnet)</td>
+          <td>Usa Claude, GPT o DeepSeek</td>
+        </tr>
+        <tr>
+          <td>Ventana contexto</td>
+          <td>Hasta 128K tokens</td>
+          <td>Hasta 200K tokens</td>
+          <td>Depende del modelo subyacente</td>
+        </tr>
+        <tr>
+          <td>Modo de operación</td>
+          <td>Reactivo (responde prompts)</td>
+          <td>Reactivo (responde prompts)</td>
+          <td>Proactivo — heartbeat, siempre activo</td>
+        </tr>
+        <tr>
+          <td>Integración en sistemas</td>
+          <td>API + plugins + GPTs</td>
+          <td>API + MCP + integraciones</td>
+          <td>Nativa y autónoma en workflows</td>
+        </tr>
+        <tr>
+          <td>Interfaz principal</td>
+          <td>Web, app, API</td>
+          <td>Web, app, API</td>
+          <td>WhatsApp, Telegram, Discord, Signal</td>
+        </tr>
+        <tr>
+          <td>Privacidad de datos</td>
+          <td>Cloud (opt-out disponible)</td>
+          <td>Cloud, política estricta</td>
+          <td>Local-first — datos en tu máquina</td>
+        </tr>
+        <tr>
+          <td>Código abierto</td>
+          <td>No</td>
+          <td>No</td>
+          <td>Sí — fundación open source</td>
+        </tr>
+        <tr>
+          <td>Alucinaciones</td>
+          <td>Moderadas</td>
+          <td>Bajas — mejor del sector</td>
+          <td>Depende del LLM configurado</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 5. DIFERENCIAS CLAVE -->
+    <h2 class="reveal"><span class="h2-num">05 ·</span> Diferencias clave</h2>
+
+    <h3 class="reveal">El diferenciador real de OpenClaw: autonomía, no velocidad</h3>
+    <p class="reveal">
+      La confusión más común sobre OpenClaw es pensar que compite en velocidad de respuesta
+      o en calidad de razonamiento. No es así. Su ventaja es otra: <strong>puede integrarse
+      de forma autónoma en cualquier sistema o flujo de trabajo sin que tengas que estar
+      presente</strong>. OpenClaw no espera a que abras una pestaña del navegador.
+      Corre en tu máquina, tiene acceso a tus archivos, tus mensajes y tus servicios,
+      y actúa por iniciativa propia según reglas que tú defines.
+    </p>
+    <p class="reveal">
+      Steinberger lo llamó <em>"heartbeat"</em>: el agente tiene un pulso, ejecuta tareas
+      en segundo plano, te informa por WhatsApp. Puedes pedirle que procese tu correo
+      cada mañana, que monitorice un repositorio, que te avise si algo cambia en una web.
+      Eso es algo que ni ChatGPT ni Claude hacen por diseño. Son asistentes que responden.
+      OpenClaw es un empleado digital que trabaja mientras duermes.
+    </p>
+
+    <h3 class="reveal">Alucinaciones: ChatGPT vs Claude</h3>
+    <p class="reveal">
+      En reducción de alucinaciones, Claude lidera de forma consistente según benchmarks
+      independientes. Esto no es accidental: es el resultado directo del enfoque Constitutional AI
+      y del entrenamiento explícito para expresar incertidumbre cuando el modelo no sabe algo,
+      en lugar de inventar. ChatGPT ha mejorado notablemente con GPT-5, pero sigue siendo
+      más propenso en dominios muy especializados. En cuanto a OpenClaw, su tasa de alucinaciones
+      depende completamente del modelo que uses como cerebro — si configuras Claude, heredas
+      sus ventajas; si configuras un modelo más pequeño, heredas sus limitaciones.
+    </p>
+
+    <div class="callout reveal">
+      <div class="callout-title">Nota desde el desarrollo</div>
+      En ciberseguridad y criptografía, una alucinación no es un error menor: puede ser una
+      vulnerabilidad real. Si generas código de seguridad con IA, el ratio de alucinaciones
+      es probablemente el factor más crítico a considerar. En ese contexto, Claude es
+      actualmente la opción más prudente por márgenes significativos.
+    </div>
+
+    <h3 class="reveal">Ecosistema e integraciones</h3>
+    <p class="reveal">
+      ChatGPT tiene aquí una ventaja difícil de igualar. La integración profunda en
+      Microsoft 365, GitHub Copilot y cientos de herramientas de productividad crea un
+      efecto de red que sus competidores no pueden replicar en el corto plazo.
+      Claude está ganando terreno rápidamente con integraciones en entornos de desarrollo
+      — Claude Code, integraciones con VS Code y JetBrains, soporte en Amazon Bedrock
+      y Google Cloud Vertex AI — y una presencia creciente en sectores regulados como
+      defensa, salud y consultoría.
+    </p>
+    <p class="reveal">
+      OpenClaw juega diferente: no busca integraciones corporativas verticales al uso.
+      Su integración es <strong>horizontal y autónoma</strong> — se conecta a casi cualquier
+      servicio a través de skills comunitarios, y su adopción en China (adaptado a WeChat
+      y DeepSeek) demuestra que puede penetrar mercados donde los otros dos tienen
+      restricciones políticas y regulatorias.
+    </p>
+
+    <h3 class="reveal">Privacidad y política de datos</h3>
+    <p class="reveal">
+      Aquí OpenClaw tiene una ventaja arquitectónica única: es <strong>local-first por diseño</strong>.
+      Los datos, el historial de conversaciones y las preferencias se almacenan en tu propia
+      máquina en archivos Markdown simples. Nada sube a ningún servidor si tú no lo configuras así.
+      Eso lo convierte en la opción más privada de las tres, aunque también en la de mayor
+      superficie de ataque si no se configura correctamente — las vulnerabilidades descubiertas
+      en enero-febrero de 2026 así lo demostraron.
+    </p>
+    <p class="reveal">
+      Claude y Anthropic tienen las políticas más claras y restrictivas en cuanto al uso
+      de datos para entrenamiento, con una postura pública consistente de no usar conversaciones
+      de usuarios sin consentimiento explícito. OpenAI ha mejorado su posición con opciones
+      de opt-out más claras, aunque su historial de cambios en términos de servicio genera
+      desconfianza en contextos empresariales sensibles.
+    </p>
+
+    <!-- 6. IMPACTO EN LA INDUSTRIA -->
+    <h2 class="reveal"><span class="h2-num">06 ·</span> Impacto en la industria y la sociedad</h2>
+    <p class="reveal">
+      ChatGPT y Claude han penetrado de forma masiva en educación, desarrollo de software y
+      creatividad. En educación, ambos han generado debates intensos sobre plagio académico
+      y dependencia cognitiva que los centros todavía no saben cómo resolver. En desarrollo
+      de software, han redefinido lo que significa ser desarrollador junior: quien no sabe
+      usar IA como herramienta empieza en desventaja real, no teórica.
+    </p>
+    <p class="reveal">
+      OpenClaw, en cambio, no ha penetrado en educación ni en el usuario general todavía.
+      Su adopción ha sido principalmente entre <strong>desarrolladores, entusiastas técnicos
+      y equipos que necesitan automatización de workflows</strong>. Su irrupción es significativa
+      no tanto por los usuarios que tiene, sino por lo que demuestra: que el siguiente paso
+      de la IA no es el chatbot más inteligente, sino el agente más autónomo.
+    </p>
+    <p class="reveal">
+      En el plano regulatorio, la UE lidera con el AI Act, que clasifica los sistemas de IA
+      por nivel de riesgo. Esta regulación presiona a todos los actores a invertir en transparencia
+      y explicabilidad, pero afecta de forma diferente a cada uno: Anthropic ya opera con
+      esa mentalidad por diseño; OpenAI está adaptando sus procesos; y OpenClaw, al ser
+      open source y ejecutarse localmente, queda en un espacio regulatorio ambiguo
+      que aún no está del todo definido.
+    </p>
+
+    <!-- 7. LA CARRERA -->
+    <h2 class="reveal"><span class="h2-num">07 ·</span> La carrera de la IA</h2>
+    <p class="reveal">
+      Llamarlo "carrera" implica que hay una línea de meta. No la hay. Lo que existe son
+      tres estrategias distintas que compiten por definir qué significa ser el modelo — o el agente —
+      más relevante en cada contexto.
+    </p>
+
+    <div class="model-cards reveal">
+      <div class="model-card chatgpt">
+        <div class="mc-name">ChatGPT</div>
+        <div class="mc-org">Estrategia</div>
+        <div class="mc-desc">Consolidar el ecosistema. Más integraciones, más usuarios, más datos. La escala y la ubicuidad como ventaja competitiva imbatible.</div>
+      </div>
+      <div class="model-card claude">
+        <div class="mc-name">Claude</div>
+        <div class="mc-org">Estrategia</div>
+        <div class="mc-desc">Ser el modelo que puedes desplegar donde el margen de error es cero. Construir confianza en sectores donde otros no pueden entrar por falta de rigor ético y técnico.</div>
+      </div>
+      <div class="model-card openclaw">
+        <div class="mc-name">OpenClaw</div>
+        <div class="mc-org">Estrategia</div>
+        <div class="mc-desc">Demostrar que la IA puede ser autónoma, local, abierta y controlada por el usuario. Cambiar la pregunta: de "¿qué me dices?" a "¿qué puedes hacer sin que te lo pida?"</div>
+      </div>
+    </div>
+
+    <p class="reveal">
+      El panorama es más amplio que estos tres. <strong>Google con Gemini</strong> compite
+      directamente con ChatGPT en usuario general con la ventaja de su integración en Search
+      y Android. <strong>Meta democratiza</strong> con modelos Llama open source que cualquiera
+      puede desplegar localmente. <strong>xAI con Grok</strong> ofrece una alternativa con
+      acceso a datos de X en tiempo real. <strong>DeepSeek</strong> llegó desde China con un
+      rendimiento comparable a GPT-4 a una fracción del coste, sacudiendo las valoraciones
+      de toda la industria. La carrera no la van a ganar solo los más grandes ni los más ricos.
+    </p>
+
+    <!-- 8. ESCENARIOS FUTUROS -->
+    <h2 class="reveal"><span class="h2-num">08 ·</span> Escenarios futuros</h2>
+    <p class="reveal">
+      Las ventajas técnicas se erosionan con rapidez — lo que GPT-4 hacía en exclusiva
+      en 2023, hoy lo hace cualquier modelo mediano. El diferenciador a largo plazo no será
+      el número de parámetros ni los benchmarks. Será la confianza, el ecosistema
+      y la capacidad de adaptarse a contextos específicos con precisión.
+    </p>
+    <p class="reveal">
+      La <strong>personalización profunda</strong> será el próximo campo de batalla real.
+      Los usuarios no querrán asistentes genéricos: querrán agentes que conozcan su contexto,
+      sus herramientas, sus preferencias. OpenClaw ya está ahí arquitectónicamente.
+      ChatGPT y Claude están invirtiendo fuerte en esa dirección con memoria persistente
+      y proyectos personalizados.
+    </p>
+    <p class="reveal">
+      El riesgo más serio no es técnico: es de concentración. Si tres o cuatro modelos
+      concentran toda la inferencia global, el riesgo de homogeneización y dependencia
+      crítica en infraestructura privada es real. El movimiento open source —
+      con Llama, Mistral, DeepSeek y ahora OpenClaw — es el contrapeso más valioso a esa tendencia.
+      Y es precisamente ahí donde OpenClaw tiene su mayor importancia: no como producto,
+      sino como señal.
+    </p>
+
+    <!-- 9. CONCLUSIÓN -->
+    <h2 class="reveal"><span class="h2-num">09 ·</span> Conclusión</h2>
+
+    <div class="verdict-chips reveal">
+      <div class="verdict-chip">
+        <div>
+          <div class="vc-label">Más generalista</div>
+          <div class="vc-winner" style="color:#74aa9c;">ChatGPT</div>
+          <div class="vc-reason">El asistente de todo el mundo</div>
+        </div>
+      </div>
+      <div class="verdict-chip">
+        <div>
+          <div class="vc-label">Más fiable</div>
+          <div class="vc-winner" style="color:#c07a3a;">Claude</div>
+          <div class="vc-reason">Código, razonamiento, cero margen de error</div>
+        </div>
+      </div>
+      <div class="verdict-chip">
+        <div>
+          <div class="vc-label">Más disruptivo</div>
+          <div class="vc-winner" style="color:var(--red-hi);">OpenClaw</div>
+          <div class="vc-reason">Autonomía, modularidad, open source</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conclusion-box reveal">
+      <div class="cb-title">¿Uno los domina a todos, o coexisten?</div>
+      <p>
+        <strong>ChatGPT</strong> seguirá dominando al usuario general. Es el Word de la IA:
+        no es siempre el mejor, pero está en todas partes y eso lo hace imprescindible.
+        Su ecosistema de integraciones crea una inercia que sus competidores no pueden
+        replicar fácilmente.
+      </p>
+      <p>
+        <strong>Claude</strong> es otra cosa. No compite en popularidad — compite en confianza.
+        Es el modelo que eliges cuando no puedes permitirte un error: código de producción,
+        análisis legal, documentos críticos, sistemas de seguridad. Anthropic ha construido
+        algo difícil de replicar: un modelo que razona mejor, alucina menos y puede desplegarse
+        en entornos donde la ética no es opcional.
+      </p>
+      <p>
+        Y <strong>OpenClaw</strong> es una categoría aparte. No es un chatbot más inteligente:
+        es la demostración de que la IA puede ser autónoma, local, abierta y controlada por
+        el usuario sin necesitar un laboratorio de miles de millones. Una persona, tres meses,
+        247.000 estrellas en GitHub. Eso no es una anécdota — es una señal sobre quién puede
+        definir el siguiente capítulo de esta historia.
+      </p>
+      <p>
+        La pregunta relevante no es cuál gana. Es si seremos capaces de construir un ecosistema
+        donde la competencia entre modelos cerrados, modelos éticos y agentes open source
+        nos dé más control sobre nuestra propia IA, no menos.
+      </p>
+    </div>
+
+  </article>
+
+  <div class="article-nav reveal">
+    <a class="btn btn-ghost" href="../blog/">← Volver al blog</a>
+    <a class="btn btn-primary" href="../index.html">Inicio →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Hecho con <span>♥</span> por Borja Iturregui</p>
+  <p>«El aprendizaje no termina nunca — cada línea de código es un paso adelante»</p>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); drawer.classList.toggle('open'); });
+  function closeMenu() { burger.classList.remove('active'); drawer.classList.remove('open'); }
+  document.addEventListener('click', (e) => { if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu(); });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

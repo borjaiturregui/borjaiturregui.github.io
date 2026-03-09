@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Borja Iturregui | Android · Seguridad · IA</title>
+<meta name="description" content="Artículos técnicos sobre Android, ciberseguridad, privacidad e inteligencia artificial. Análisis con opinión propia sobre lo que mueve el sector." />
+<meta name="keywords" content="blog android, ciberseguridad, privacidad móviles, blockchain, inteligencia artificial, kotlin" />
+<meta name="author" content="Borja Iturregui" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://borjaiturregui.github.io/blog/" />
+<meta property="og:type"        content="website" />
+<meta property="og:url"         content="https://borjaiturregui.github.io/blog/" />
+<meta property="og:title"       content="Blog — Borja Iturregui" />
+<meta property="og:description" content="Artículos técnicos sobre Android, ciberseguridad e inteligencia artificial." />
+<meta property="og:locale"      content="es_ES" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de Borja Iturregui",
+  "url": "https://borjaiturregui.github.io/blog/",
+  "author": { "@type": "Person", "name": "Borja Iturregui" },
+  "description": "Artículos técnicos sobre Android, ciberseguridad e inteligencia artificial"
+}
+</script>
+<!-- GA4 → sustituye G-XXXXXXXXXX por tu Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --black:#000000; --surface:#111111; --card:#161616; --border:#1e1e1e;
+  --red:#7B1A2E; --red-hi:#B22948; --red-dim:rgba(123,26,46,0.18);
+  --white:#ffffff; --muted:#888888; --dim:#333333;
+  --mono:'Share Tech Mono',monospace; --display:'Syne',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--white);font-family:var(--mono);overflow-x:hidden;cursor:crosshair;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);pointer-events:none;z-index:999;}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.35;z-index:0;pointer-events:none;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(0,0,0,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:0.5px;color:var(--white);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo span{color:var(--red-hi);}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--red-hi);}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:crosshair;padding:4px;}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--white);transition:transform 0.3s,opacity 0.3s;}
+.nav-burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.active span:nth-child(2){opacity:0;}
+.nav-burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{display:none;flex-direction:column;background:rgba(0,0,0,0.97);border-top:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.2s;}
+.nav-drawer.open{max-height:340px;padding:8px 0;}
+.nav-drawer a{color:var(--muted);text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:14px 24px;border-bottom:1px solid var(--border);transition:color 0.2s,background 0.2s;}
+.nav-drawer a:last-child{border-bottom:none;}
+.nav-drawer a:hover{color:var(--red-hi);background:rgba(178,41,72,0.05);}
+@media(max-width:680px){.nav-links{display:none;}.nav-burger{display:flex;}.nav-drawer{display:flex;}}
+.blog-wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:96px 24px 72px;}
+.blog-header{margin-bottom:48px;}
+.blog-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--red-hi);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.blog-tag::before{content:'';width:28px;height:1px;background:var(--red-hi);}
+.blog-title{font-family:var(--display);font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;}
+.blog-subtitle{font-size:13px;color:var(--muted);line-height:1.8;max-width:480px;}
+.posts-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:24px;text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.post-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.post-card:hover{border-color:var(--red);transform:translateY(-2px);}
+.post-card:hover::before{transform:scaleX(1);}
+.post-card.featured{border-left:3px solid var(--red);}
+.post-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+.post-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red-hi);background:var(--red-dim);border:1px solid rgba(178,41,72,0.3);border-radius:2px;padding:2px 7px;}
+.post-date{font-size:11px;color:var(--muted);letter-spacing:1px;}
+.post-read{font-size:11px;color:var(--dim);}
+.post-title{font-family:var(--display);font-size:20px;font-weight:800;color:var(--white);margin-bottom:10px;letter-spacing:-0.3px;line-height:1.3;}
+.post-excerpt{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:16px;}
+.post-footer{display:flex;align-items:center;justify-content:space-between;}
+.post-tags{display:flex;gap:6px;flex-wrap:wrap;}
+.tag-chip{font-size:10px;padding:2px 7px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:2px;color:var(--dim);}
+.post-arrow{color:var(--red-hi);font-size:13px;transition:transform 0.2s;}
+.post-card:hover .post-arrow{transform:translateX(4px);}
+.coming-soon{background:var(--card);border:1px dashed var(--border);border-radius:4px;padding:32px;}
+.cs-meta{display:flex;gap:10px;margin-bottom:12px;}
+.cs-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:2px;padding:2px 7px;}
+.cs-title{font-family:var(--display);font-size:18px;font-weight:800;color:var(--dim);margin-bottom:8px;line-height:1.3;}
+.cs-text{font-size:12px;color:var(--dim);line-height:1.7;}
+footer{position:relative;z-index:1;border-top:1px solid var(--border);max-width:900px;margin:0 auto;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+footer p{font-size:11px;color:var(--dim);}
+footer span{color:var(--red-hi);}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{animation:fadeup 0.8s ease both;}
+.delay-1{animation-delay:0.10s;}
+.delay-2{animation-delay:0.20s;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="../index.html"><span>&gt;</span> borja</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#proyectos">Proyectos</a></li>
+      <li><a href="../index.html#skills">Habilidades</a></li>
+      <li><a href="../index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="../blog/" class="active">Blog</a></li>
+      <li><a href="../index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-drawer" id="drawer">
+    <a href="../index.html#proyectos" onclick="closeMenu()">Proyectos</a>
+    <a href="../index.html#skills"    onclick="closeMenu()">Habilidades</a>
+    <a href="../index.html#sobre-mi"  onclick="closeMenu()">Sobre mí</a>
+    <a href="../blog/"                onclick="closeMenu()">Blog</a>
+    <a href="../index.html#contacto"  onclick="closeMenu()">Contacto</a>
+  </div>
+</nav>
+<div class="blog-wrap">
+  <header class="blog-header">
+    <div class="blog-tag fade-in">Notas · Análisis · Opinión</div>
+    <h1 class="blog-title fade-in delay-1">Blog</h1>
+    <p class="blog-subtitle fade-in delay-2">Artículos técnicos sobre Android, ciberseguridad e inteligencia artificial. Aquí escribo sobre lo que aprendo y lo que opino del sector.</p>
+  </header>
+  <div class="posts-grid">
+    <a class="post-card featured reveal" href="ia-carrera-2026.html">
+      <div class="post-meta">
+        <span class="post-tag">Inteligencia Artificial</span>
+        <span class="post-tag">Análisis</span>
+        <span class="post-date">Marzo 2026</span>
+        <span class="post-read">· 12 min</span>
+      </div>
+      <div class="post-title">ChatGPT vs Claude vs OpenClaw: la carrera actual de la inteligencia artificial</div>
+      <div class="post-excerpt">Análisis técnico y estratégico de los tres grandes modelos que lideran la IA en 2026. Sus filosofías opuestas, sus diferencias reales y hacia dónde va todo esto.</div>
+      <div class="post-footer">
+        <div class="post-tags"><span class="tag-chip">ChatGPT</span><span class="tag-chip">Claude</span><span class="tag-chip">OpenClaw</span><span class="tag-chip">LLM</span></div>
+        <span class="post-arrow">→</span>
+      </div>
+    </a>
+    <div class="coming-soon reveal">
+      <div class="cs-meta"><span class="cs-tag">Próximamente</span><span class="cs-tag">Privacidad · Opinión</span></div>
+      <div class="cs-title">El problema real de la privacidad en los móviles en 2026: qué datos cedes sin saberlo</div>
+      <div class="cs-text">Fingerprinting, metadatos, sensores sin permiso explícito, SDKs ocultos dentro de apps inocentes. El problema va mucho más profundo que los permisos que ves en pantalla.</div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>Hecho con <span>♥</span> por Borja Iturregui</p>
+  <p>«El aprendizaje no termina nunca — cada línea de código es un paso adelante»</p>
+</footer>
+<script>
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); drawer.classList.toggle('open'); });
+  function closeMenu() { burger.classList.remove('active'); drawer.classList.remove('open'); }
+  document.addEventListener('click', (e) => { if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu(); });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
