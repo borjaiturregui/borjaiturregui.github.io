@@ -6,19 +6,40 @@
 ===================================================== -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Borja Iturregui — Desarrollador Android</title>
-<meta name="description" content="Desarrollador Android y entusiasta de la ciberseguridad. Kotlin, Python, Shell." />
-<!-- Open Graph -->
-<meta property="og:title" content="Borja Iturregui — Desarrollador Android" />
-<meta property="og:description" content="Creador de CriptES. Apasionado por construir apps útiles, bien diseñadas y seguras." />
-<meta property="og:url" content="https://borjaiturregui.github.io" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Borja Iturregui — Desarrollador Android" />
-<meta name="twitter:description" content="Creador de CriptES. Apasionado por construir apps útiles, bien diseñadas y seguras." />
-<!-- =====================================================
-  FUENTES
-===================================================== -->
+<title>Borja Iturregui — Desarrollador Android &amp; Web · Seguridad Informática</title>
+<meta name="description" content="Desarrollador Android y web especializado en ciberseguridad. Apps móviles, tiendas online y soluciones digitales a medida. Kotlin, WordPress, Python." />
+<meta name="keywords" content="desarrollador android, desarrollo web, tienda online, woocommerce, ciberseguridad, kotlin, bilbao, getxo" />
+<meta name="author" content="Borja Iturregui" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://borjaiturregui.github.io/" />
+<meta property="og:type"        content="website" />
+<meta property="og:url"         content="https://borjaiturregui.github.io/" />
+<meta property="og:title"       content="Borja Iturregui — Desarrollador Android &amp; Web" />
+<meta property="og:description" content="Apps móviles, webs y tiendas online. Soluciones digitales a medida con foco en seguridad y código limpio." />
+<meta property="og:locale"      content="es_ES" />
+<meta name="twitter:card"        content="summary" />
+<meta name="twitter:title"       content="Borja Iturregui — Desarrollador Android &amp; Web" />
+<meta name="twitter:description" content="Apps móviles, webs y tiendas online. Soluciones digitales a medida." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Borja Iturregui",
+  "url": "https://borjaiturregui.github.io",
+  "jobTitle": "Desarrollador Android y Web",
+  "description": "Desarrollador especializado en Android, desarrollo web y ciberseguridad",
+  "knowsAbout": ["Android", "Kotlin", "WordPress", "WooCommerce", "Ciberseguridad", "Python"],
+  "sameAs": ["https://github.com/borjaiturregui"]
+}
+</script>
+<!-- GA4 → sustituye G-XXXXXXXXXX por tu Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 <style>
@@ -36,12 +57,10 @@
   --white:   #ffffff;
   --muted:   #888888;
   --dim:     #333333;
+  --green:   #3fb950;
   --mono:    'Share Tech Mono', monospace;
   --display: 'Syne', sans-serif;
 }
-/* =====================================================
-   RESET & BASE
-===================================================== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -51,166 +70,80 @@ body {
   overflow-x: hidden;
   cursor: crosshair;
 }
-/* Líneas de escaneo */
 body::after {
   content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent, transparent 2px,
-    rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 999;
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
+  pointer-events: none; z-index: 999;
 }
-/* Rejilla de fondo */
 .grid-bg {
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  position: fixed; inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.35;
-  z-index: 0;
-  pointer-events: none;
+  opacity: 0.35; z-index: 0; pointer-events: none;
 }
 /* =====================================================
    NAVEGACIÓN
 ===================================================== */
 nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: fixed; top: 0; left: 0; right: 0;
   z-index: 200;
   background: rgba(0,0,0,0.93);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 960px; margin: 0 auto; padding: 0 24px;
+  height: 56px; display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  color: var(--white);
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
+  font-family: var(--display); font-weight: 800; font-size: 16px;
+  letter-spacing: 0.5px; color: var(--white); text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
 }
 .nav-logo span { color: var(--red-hi); }
-.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
 .nav-links a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: color 0.2s;
-  white-space: nowrap;
+  color: var(--muted); text-decoration: none; font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; white-space: nowrap;
 }
 .nav-links a:hover { color: var(--red-hi); }
-.nav-burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: crosshair;
-  padding: 4px;
-}
-.nav-burger span {
-  display: block;
-  width: 22px; height: 2px;
-  background: var(--white);
-  transition: transform 0.3s, opacity 0.3s;
-}
+.nav-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: crosshair; padding: 4px; }
+.nav-burger span { display: block; width: 22px; height: 2px; background: var(--white); transition: transform 0.3s, opacity 0.3s; }
 .nav-burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.active span:nth-child(2) { opacity: 0; }
 .nav-burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .nav-drawer {
-  display: none;
-  flex-direction: column;
-  background: rgba(0,0,0,0.97);
-  border-top: 1px solid var(--border);
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.2s;
+  display: none; flex-direction: column;
+  background: rgba(0,0,0,0.97); border-top: 1px solid var(--border);
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s;
 }
-.nav-drawer.open { max-height: 280px; padding: 8px 0; }
+.nav-drawer.open { max-height: 380px; padding: 8px 0; }
 .nav-drawer a {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 14px 24px;
-  border-bottom: 1px solid var(--border);
-  transition: color 0.2s, background 0.2s;
+  color: var(--muted); text-decoration: none; font-size: 12px;
+  letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px;
+  border-bottom: 1px solid var(--border); transition: color 0.2s, background 0.2s;
 }
 .nav-drawer a:last-child { border-bottom: none; }
 .nav-drawer a:hover { color: var(--red-hi); background: rgba(178,41,72,0.05); }
-@media (max-width: 680px) {
-  .nav-links { display: none; }
-  .nav-burger { display: flex; }
-  .nav-drawer { display: flex; }
-}
+@media (max-width: 720px) { .nav-links { display: none; } .nav-burger { display: flex; } .nav-drawer { display: flex; } }
 /* =====================================================
    HERO
 ===================================================== */
-.hero-wrap { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 24px; }
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 40px;
-  align-items: center;
-  padding: 80px 0 72px;
-}
+.hero-wrap { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.hero { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: center; padding: 80px 0 72px; }
 @media (max-width: 800px) { .hero { grid-template-columns: 1fr; padding: 80px 0 60px; gap: 36px; } }
-.hero-tag {
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--red-hi);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.hero-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--red-hi); }
-.hero h1 {
-  font-family: var(--display);
-  font-size: clamp(36px, 5.5vw, 68px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  margin-bottom: 24px;
-  padding-bottom: 8px;
-}
+.hero h1 { font-family: var(--display); font-size: clamp(36px, 5.5vw, 68px); font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 24px; }
 .hero h1 .line-red { color: var(--red-hi); display: block; }
 .hero-desc { font-size: 13px; color: var(--muted); line-height: 1.85; max-width: 420px; margin-bottom: 36px; }
 .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  border-radius: 2px;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: crosshair;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 2px; font-family: var(--mono);
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  text-decoration: none; transition: all 0.2s; cursor: crosshair;
 }
 .btn-primary { background: var(--red); color: var(--white); border: 1px solid var(--red); }
 .btn-primary:hover { background: var(--red-hi); border-color: var(--red-hi); }
@@ -219,23 +152,8 @@ nav {
 /* =====================================================
    TERMINAL
 ===================================================== */
-.terminal {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  font-size: 12px;
-  animation: fadeup 1s ease 0.4s both;
-  align-self: center;
-}
-.term-bar {
-  background: var(--card);
-  padding: 8px 14px;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-}
+.terminal { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; font-size: 12px; animation: fadeup 1s ease 0.4s both; align-self: center; }
+.term-bar { background: var(--card); padding: 8px 14px; display: flex; gap: 6px; align-items: center; border-bottom: 1px solid var(--border); }
 .term-dot { width: 10px; height: 10px; border-radius: 50%; }
 .term-dot:nth-child(1) { background: #ff5f57; }
 .term-dot:nth-child(2) { background: #ffbd2e; }
@@ -244,75 +162,83 @@ nav {
 .term-body { padding: 16px; line-height: 2.1; color: var(--muted); }
 .term-body .prompt { color: var(--red-hi); }
 .term-body .cmd    { color: var(--white); }
-.term-body .out    { color: #3fb950; }
-.term-body .blink {
-  display: inline-block;
-  width: 8px; height: 14px;
-  background: var(--red-hi);
-  vertical-align: middle;
-  animation: blink 1s step-end infinite;
-}
+.term-body .out    { color: var(--green); }
+.term-body .blink { display: inline-block; width: 8px; height: 14px; background: var(--red-hi); vertical-align: middle; animation: blink 1s step-end infinite; }
 /* =====================================================
    SECCIONES
 ===================================================== */
-section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 72px 24px; }
+section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 72px 24px; }
 .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
 .section-num { font-size: 11px; color: var(--red-hi); letter-spacing: 2px; }
 .section-title { font-family: var(--display); font-size: 26px; font-weight: 800; letter-spacing: -0.5px; }
 .section-header::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 /* =====================================================
+   SERVICIOS
+===================================================== */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+.service-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+  padding: 28px 22px; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px; background: var(--red);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.service-card:hover { border-color: var(--red); transform: translateY(-2px); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { font-size: 28px; margin-bottom: 16px; }
+.service-name { font-family: var(--display); font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+.service-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.service-tag {
+  font-size: 10px; padding: 3px 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 2px; color: var(--dim); letter-spacing: 0.5px;
+}
+/* =====================================================
    PROYECTOS
 ===================================================== */
+.projects-block { margin-bottom: 40px; }
+.projects-block:last-child { margin-bottom: 0; }
+.block-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.block-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 @media (max-width: 580px) { .project-grid { grid-template-columns: 1fr; } }
 .project-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 22px;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
+  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+  padding: 22px; text-decoration: none; color: inherit; display: block;
+  position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s;
 }
 .project-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 2px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px; background: var(--red);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
 }
 .project-card:hover { border-color: var(--red); transform: translateY(-2px); }
 .project-card:hover::before { transform: scaleX(1); }
 .project-card.featured { grid-column: 1 / -1; }
+.project-card.client { border-left: 3px solid var(--red-hi); }
 .proj-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 8px; }
 .proj-name { font-family: var(--display); font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .proj-desc { font-size: 12px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+.proj-result {
+  font-size: 11px; color: var(--green);
+  display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; line-height: 1.6;
+}
+.proj-result::before { content: "▸"; flex-shrink: 0; margin-top: 1px; }
 .proj-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack-chip {
-  font-size: 10px;
-  padding: 3px 8px;
-  background: var(--red-dim);
-  border: 1px solid rgba(178,41,72,0.3);
-  border-radius: 2px;
-  color: var(--red-hi);
-  letter-spacing: 0.5px;
-}
-.proj-status {
-  position: absolute;
-  top: 14px; right: 14px;
-  font-size: 9px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 2px;
-}
-.status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: #3fb950; }
+.stack-chip { font-size: 10px; padding: 3px 8px; background: var(--red-dim); border: 1px solid rgba(178,41,72,0.3); border-radius: 2px; color: var(--red-hi); letter-spacing: 0.5px; }
+.stack-chip.neutral { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--dim); }
+.proj-status { position: absolute; top: 14px; right: 14px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+.status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
+.status-wip  { background: rgba(249,168,37,0.1); border: 1px solid rgba(249,168,37,0.3); color: #F9A825; }
 /* =====================================================
    HABILIDADES
 ===================================================== */
@@ -327,7 +253,7 @@ section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padd
 /* =====================================================
    SOBRE MÍ
 ===================================================== */
-.about-text { font-size: 13px; color: var(--muted); line-height: 1.95; max-width: 620px; margin-bottom: 28px; }
+.about-text { font-size: 13px; color: var(--muted); line-height: 1.95; max-width: 680px; margin-bottom: 28px; }
 .about-text strong { color: var(--white); }
 .about-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 @media (max-width: 580px) { .about-principles { grid-template-columns: 1fr; } }
@@ -338,18 +264,13 @@ section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padd
 /* =====================================================
    CONTACTO
 ===================================================== */
+.contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 28px; }
+.contact-intro strong { color: var(--white); }
 .contact-row { display: flex; flex-direction: column; gap: 10px; }
 .contact-link {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 20px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  text-decoration: none;
-  color: var(--white);
-  transition: border-color 0.2s, padding-left 0.2s;
+  display: flex; align-items: center; gap: 16px; padding: 16px 20px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+  text-decoration: none; color: var(--white); transition: border-color 0.2s, padding-left 0.2s;
 }
 .contact-link:hover { border-color: var(--red-hi); padding-left: 28px; }
 .contact-icon { font-size: 18px; width: 24px; text-align: center; }
@@ -361,40 +282,23 @@ section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padd
    FOOTER
 ===================================================== */
 footer {
-  position: relative; z-index: 1;
-  border-top: 1px solid var(--border);
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  position: relative; z-index: 1; border-top: 1px solid var(--border);
+  max-width: 960px; margin: 0 auto; padding: 24px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
 }
 footer p { font-size: 11px; color: var(--dim); }
 footer span { color: var(--red-hi); }
 /* =====================================================
    ANIMACIONES
 ===================================================== */
-@keyframes fadeup {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
+@keyframes fadeup { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .fade-in   { animation: fadeup 0.8s ease both; }
 .delay-1   { animation-delay: 0.10s; }
 .delay-2   { animation-delay: 0.20s; }
 .delay-3   { animation-delay: 0.35s; }
 .delay-4   { animation-delay: 0.50s; }
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.08s; }
 .reveal-delay-2 { transition-delay: 0.16s; }
@@ -405,7 +309,6 @@ footer span { color: var(--red-hi); }
 </style>
 </head>
 <body>
-
 <div class="grid-bg"></div>
 
 <!-- NAV -->
@@ -413,9 +316,11 @@ footer span { color: var(--red-hi); }
   <div class="nav-inner">
     <a class="nav-logo" href="#"><span>&gt;</span> borja</a>
     <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
       <li><a href="#skills">Habilidades</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#blog">Blog</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="nav-burger" id="burger" aria-label="Menú">
@@ -423,9 +328,11 @@ footer span { color: var(--red-hi); }
     </button>
   </div>
   <div class="nav-drawer" id="drawer">
+    <a href="#servicios" onclick="closeMenu()">Servicios</a>
     <a href="#proyectos" onclick="closeMenu()">Proyectos</a>
     <a href="#skills"    onclick="closeMenu()">Habilidades</a>
     <a href="#sobre-mi"  onclick="closeMenu()">Sobre mí</a>
+    <a href="#blog"      onclick="closeMenu()">Blog</a>
     <a href="#contacto"  onclick="closeMenu()">Contacto</a>
   </div>
 </nav>
@@ -434,84 +341,151 @@ footer span { color: var(--red-hi); }
 <div class="hero-wrap">
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-tag fade-in">Desarrollador &amp; Seguridad Informática</div>
+      <div class="hero-tag fade-in">Desarrollo · Web · Android · Seguridad</div>
       <h1 class="fade-in delay-1">
         Borja
         <span class="line-red">Iturregui</span>
       </h1>
       <p class="hero-desc fade-in delay-2">
-        Desarrollador Android apasionado por construir
-        aplicaciones útiles, bien diseñadas y seguras.
-        Apasionado por la criptografía y el código limpio.
+        Desarrollo aplicaciones Android, webs y tiendas online para negocios que quieren
+        presencia digital sólida. También construyo herramientas de seguridad y criptografía
+        porque entender cómo funciona algo por dentro es la única forma de hacerlo bien.
       </p>
       <div class="hero-cta fade-in delay-3">
-        <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-ghost" href="https://github.com/borjaiturregui" target="_blank">GitHub →</a>
+        <a class="btn btn-primary" href="#servicios">¿Qué puedo hacer por ti?</a>
+        <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
       </div>
     </div>
     <div class="terminal fade-in delay-4">
       <div class="term-bar">
-        <div class="term-dot"></div>
-        <div class="term-dot"></div>
-        <div class="term-dot"></div>
-        <span class="term-title">CriptES — terminal</span>
+        <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
+        <span class="term-title">borja — terminal</span>
       </div>
       <div class="term-body">
-        <div><span class="prompt">~/CriptES $</span> <span class="cmd">./gradlew installDebug</span></div>
-        <div><span class="out">✓ BUILD SUCCESSFUL</span></div>
-        <div><span class="out">✓ AES-256 loaded</span></div>
-        <div><span class="out">✓ Bouncy Castle 1.77</span></div>
-        <div><span class="out">✓ Clean Architecture OK</span></div>
-        <div><span class="out">✓ 0 warnings, 0 errors</span></div>
-        <div><span class="prompt">~/CriptES $</span> <span class="blink"></span></div>
+        <div><span class="prompt">~/borja $</span> <span class="cmd">skills --list</span></div>
+        <div><span class="out">✓ Android · Kotlin</span></div>
+        <div><span class="out">✓ Web · WordPress · WooCommerce</span></div>
+        <div><span class="out">✓ Seguridad · Criptografía</span></div>
+        <div><span class="out">✓ Python · Shell · Linux</span></div>
+        <div><span class="prompt">~/borja $</span> <span class="blink"></span></div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Servicios</h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">🛍️</div>
+      <div class="service-name">Webs y tiendas online</div>
+      <div class="service-desc">
+        Diseño y desarrollo de sitios web profesionales y tiendas online. Webs rápidas,
+        seguras y fáciles de gestionar. Integraciones con pasarelas de pago y sistemas de inventario.
+      </div>
+      <div class="service-tags">
+        <span class="service-tag">WordPress</span>
+        <span class="service-tag">WooCommerce</span>
+        <span class="service-tag">HTML · CSS</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🔐</div>
+      <div class="service-name">Seguridad e infraestructura</div>
+      <div class="service-desc">
+        Auditoría de seguridad en sistemas Linux, análisis de vulnerabilidades y hardening.
+        Para pequeñas empresas que necesitan saber que su sistema está bien cerrado.
+      </div>
+      <div class="service-tags">
+        <span class="service-tag">Linux</span>
+        <span class="service-tag">Auditoría</span>
+        <span class="service-tag">Redes</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- PROYECTOS -->
 <section id="proyectos">
   <div class="section-header reveal">
-    <span class="section-num">01</span>
+    <span class="section-num">02</span>
     <h2 class="section-title">Proyectos</h2>
   </div>
-  <div class="project-grid">
-    <a class="project-card featured reveal reveal-delay-1" href="https://github.com/borjaiturregui/CriptES" target="_blank">
-      <span class="proj-status status-live">v1.1.1 live</span>
-      <div class="proj-tag">Proyecto estrella · Android · <span style="color:var(--muted)">2026</span></div>
-      <div class="proj-name">🔐 CriptES</div>
-      <div class="proj-desc">
-        Kit de seguridad criptográfica para Android. Cifrado simétrico (AES-256, DES, 3DES, ChaCha20),
-        generador de hashes, esteganografía LSB en imágenes y modo educativo integrado.
-        100% offline, sin permisos de internet, sin telemetría. Clean Architecture + MVVM + Hilt.
-      </div>
-      <div class="proj-stack">
-        <span class="stack-chip">Kotlin</span>
-        <span class="stack-chip">Jetpack Compose</span>
-        <span class="stack-chip">Bouncy Castle</span>
-        <span class="stack-chip">Hilt</span>
-        <span class="stack-chip">Coroutines</span>
-        <span class="stack-chip">Clean Architecture</span>
-      </div>
-    </a>
-    <a class="project-card reveal reveal-delay-2" href="https://github.com/borjaiturregui/auditoria-linux" target="_blank">
-      <span class="proj-status status-live">activo</span>
-      <div class="proj-tag">Herramienta · Linux</div>
-      <div class="proj-name">🛡️ auditoria-linux</div>
-      <div class="proj-desc">Scripts de auditoría y seguridad para sistemas Linux. Automatización de análisis y hardening.</div>
-      <div class="proj-stack">
-        <span class="stack-chip">Shell</span>
-        <span class="stack-chip">Bash</span>
-        <span class="stack-chip">Linux</span>
-      </div>
-    </a>
+
+  <!-- TRABAJOS PARA CLIENTES -->
+  <div class="projects-block">
+    <div class="block-label reveal">Trabajos para clientes</div>
+    <div class="project-grid">
+      <a class="project-card client featured reveal reveal-delay-1" href="https://phoenixsquadcycling.com" target="_blank" rel="noopener">
+        <span class="proj-status status-wip">En desarrollo</span>
+        <div class="proj-tag">Tienda online · Bilbao · 2026</div>
+        <div class="proj-name">🚴 Phoenix Squad Cycling Club</div>
+        <div class="proj-desc">
+          Rediseño completo de la web y tienda online del club ciclista Phoenix Squad en Bilbao.
+          Migración a una arquitectura WooCommerce moderna, gestión de inventario integrada
+          y experiencia de compra optimizada para sus clientes.
+        </div>
+        <div class="proj-result">
+          Migración completa de plataforma · gestión de inventario · tienda WooCommerce operativa
+        </div>
+        <div class="proj-stack">
+          <span class="stack-chip neutral">WordPress</span>
+          <span class="stack-chip neutral">WooCommerce</span>
+          <span class="stack-chip neutral">PHP</span>
+          <span class="stack-chip neutral">CSS</span>
+        </div>
+      </a>
+    </div>
   </div>
+
+  <!-- PROYECTOS PROPIOS -->
+  <div class="projects-block">
+    <div class="block-label reveal">Proyectos propios</div>
+    <div class="project-grid">
+      <a class="project-card featured reveal reveal-delay-1" href="https://github.com/borjaiturregui/CriptES" target="_blank" rel="noopener">
+        <span class="proj-status status-live">v1.1.1 live</span>
+        <div class="proj-tag">Proyecto estrella · Android · 2026</div>
+        <div class="proj-name">🔐 CriptES</div>
+        <div class="proj-desc">
+          Kit de seguridad criptográfica para Android. Cifrado simétrico (AES-256, DES, 3DES, ChaCha20),
+          generador de hashes, esteganografía LSB y modo educativo integrado.
+          100% offline, sin telemetría. Clean Architecture + MVVM + Hilt.
+        </div>
+        <div class="proj-stack">
+          <span class="stack-chip">Kotlin</span>
+          <span class="stack-chip">Jetpack Compose</span>
+          <span class="stack-chip">Bouncy Castle</span>
+          <span class="stack-chip">Hilt</span>
+          <span class="stack-chip">Clean Architecture</span>
+        </div>
+      </a>
+      <a class="project-card reveal reveal-delay-2" href="https://github.com/borjaiturregui/auditoria-linux" target="_blank" rel="noopener">
+        <span class="proj-status status-live">activo</span>
+        <div class="proj-tag">Herramienta · Linux</div>
+        <div class="proj-name">🛡️ auditoria-linux</div>
+        <div class="proj-desc">Scripts de auditoría y seguridad para sistemas Linux. Automatización de análisis y hardening.</div>
+        <div class="proj-stack">
+          <span class="stack-chip">Shell</span>
+          <span class="stack-chip">Bash</span>
+          <span class="stack-chip">Linux</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
 </section>
 
 <!-- HABILIDADES -->
 <section id="skills">
   <div class="section-header reveal">
-    <span class="section-num">02</span>
+    <span class="section-num">03</span>
     <h2 class="section-title">Habilidades</h2>
   </div>
   <div class="skills-grid">
@@ -522,27 +496,27 @@ footer span { color: var(--red-hi); }
       </ul>
     </div>
     <div class="skill-block reveal reveal-delay-2">
+      <div class="skill-cat">Web &amp; E-commerce</div>
+      <ul class="skill-list">
+        <li>WordPress</li><li>WooCommerce</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>PHP (básico)</li>
+      </ul>
+    </div>
+    <div class="skill-block reveal reveal-delay-3">
       <div class="skill-cat">Ciberseguridad</div>
       <ul class="skill-list">
         <li>Wireshark</li><li>Nmap</li><li>GNS3</li><li>Criptografía aplicada</li><li>Auditoría Linux</li>
       </ul>
     </div>
-    <div class="skill-block reveal reveal-delay-3">
+    <div class="skill-block reveal reveal-delay-4">
       <div class="skill-cat">Lenguajes</div>
       <ul class="skill-list">
         <li>Kotlin</li><li>Python</li><li>Shell / Bash</li><li>JavaScript</li><li>HTML &amp; CSS</li>
       </ul>
     </div>
-    <div class="skill-block reveal reveal-delay-4">
-      <div class="skill-cat">Herramientas</div>
-      <ul class="skill-list">
-        <li>Git &amp; GitHub</li><li>VS Code</li><li>Oracle SQL Developer</li><li>Linux</li>
-      </ul>
-    </div>
     <div class="skill-block reveal reveal-delay-5">
       <div class="skill-cat">Arquitectura</div>
       <ul class="skill-list">
-        <li>Clean Architecture</li><li>MVVM</li><li>SOLID</li><li>Bouncy Castle</li>
+        <li>Clean Architecture</li><li>MVVM</li><li>SOLID</li><li>Git &amp; GitHub</li>
       </ul>
     </div>
     <div class="skill-block reveal reveal-delay-6">
@@ -557,18 +531,18 @@ footer span { color: var(--red-hi); }
 <!-- SOBRE MÍ -->
 <section id="sobre-mi">
   <div class="section-header reveal">
-    <span class="section-num">03</span>
+    <span class="section-num">04</span>
     <h2 class="section-title">Sobre mí</h2>
   </div>
   <div class="about-text reveal reveal-delay-1">
-    Soy un desarrollador con foco en <strong>Android y ciberseguridad</strong>.
+    Soy desarrollador con foco en <strong>Android, desarrollo web y ciberseguridad</strong>.
     Empecé a programar por curiosidad sobre cómo funcionan los sistemas por dentro,
     y esa curiosidad es la que sigue guiando cada proyecto que construyo.<br><br>
-    <strong>CriptES</strong> nació de querer entender la criptografía haciéndola,
-    no solo leyendo sobre ella. Cada función incluye un modo educativo que explica
-    el algoritmo por dentro, porque el mejor código es el que también enseña.<br><br>
-    Mi objetivo es crecer como desarrollador y contribuir a proyectos donde
-    la seguridad no sea un añadido de última hora, sino una base desde el inicio.
+    Trabajo tanto en proyectos propios — como <strong>CriptES</strong>, un kit criptográfico
+    para Android — como para negocios que necesitan presencia digital sólida: webs, tiendas online
+    y soluciones a medida que funcionan de verdad y son fáciles de mantener.<br><br>
+    Mi objetivo es crecer como desarrollador y ser útil tanto a proyectos técnicos
+    ambiciosos como a negocios que quieren digitalizarse sin complicaciones.
   </div>
   <div class="about-principles">
     <div class="principle reveal reveal-delay-2">
@@ -577,9 +551,9 @@ footer span { color: var(--red-hi); }
       <div class="p-body">La seguridad no es una capa extra. Es una decisión de arquitectura desde el primer commit.</div>
     </div>
     <div class="principle reveal reveal-delay-3">
-      <div class="p-icon">📖</div>
-      <div class="p-title">Código que enseña</div>
-      <div class="p-body">Cada herramienta que construyo incluye documentación que explica el porqué, no solo el cómo.</div>
+      <div class="p-icon">🎯</div>
+      <div class="p-title">Soluciones que funcionan</div>
+      <div class="p-body">No hay proyecto pequeño. Cada web, cada app, cada script tiene que hacer bien lo que promete.</div>
     </div>
     <div class="principle reveal reveal-delay-4">
       <div class="p-icon">🛠️</div>
@@ -589,28 +563,56 @@ footer span { color: var(--red-hi); }
   </div>
 </section>
 
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Blog</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <a style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:4px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s,transform 0.2s;position:relative;overflow:hidden;" href="blog/ia-carrera-2026.html" class="reveal reveal-delay-1"
+       onmouseover="this.style.transform='translateY(-2px)';this.style.borderColor='var(--red)'"
+       onmouseout="this.style.transform='';this.style.borderColor=''">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--red-hi);background:var(--red-dim);border:1px solid rgba(178,41,72,0.3);border-radius:2px;padding:2px 7px;">IA · Análisis</span>
+        <span style="font-size:11px;color:var(--muted);">Marzo 2026 · 14 min</span>
+      </div>
+      <div style="font-family:var(--display);font-size:17px;font-weight:800;color:var(--white);margin-bottom:8px;line-height:1.3;">ChatGPT vs Claude vs OpenClaw: la carrera actual de la IA</div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:14px;">Análisis técnico y estratégico de los tres grandes actores que lideran la IA en 2026.</div>
+      <div style="display:flex;justify-content:flex-end;"><span style="color:var(--red-hi);font-size:13px;">→</span></div>
+    </a>
+    <div style="background:var(--card);border:1px dashed var(--border);border-radius:4px;padding:22px;cursor:default;" class="reveal reveal-delay-2">
+      <div style="display:flex;gap:8px;margin-bottom:10px;">
+        <span style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:2px;padding:2px 7px;">Próximamente</span>
+      </div>
+      <div style="font-family:var(--display);font-size:17px;font-weight:800;color:var(--dim);margin-bottom:8px;line-height:1.3;">El problema real de la privacidad en los móviles en 2026</div>
+      <div style="font-size:12px;color:var(--dim);line-height:1.75;">Qué datos cedes sin saberlo. Fingerprinting, metadatos, SDKs ocultos. Va mucho más profundo que los permisos.</div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:flex-end;margin-top:16px;" class="reveal reveal-delay-3">
+    <a class="btn btn-ghost" href="blog/">Ver todos los artículos →</a>
+  </div>
+</section>
+
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-header reveal">
-    <span class="section-num">04</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Contacto</h2>
   </div>
+  <p class="contact-intro reveal reveal-delay-1">
+    Si tienes un proyecto en mente — una app, una web, una tienda online, o simplemente
+    quieres saber si puedo ayudarte — <strong>escríbeme</strong>. Respondo siempre.
+  </p>
   <div class="contact-row">
-    <a class="contact-link reveal reveal-delay-1" href="https://github.com/borjaiturregui" target="_blank">
+    <a class="contact-link reveal reveal-delay-2" href="https://github.com/borjaiturregui" target="_blank" rel="noopener">
       <span class="contact-icon">⌥</span>
-      <div>
-        <div class="contact-lbl">GitHub</div>
-        <div class="contact-val">github.com/borjaiturregui</div>
-      </div>
+      <div><div class="contact-lbl">GitHub</div><div class="contact-val">github.com/borjaiturregui</div></div>
       <span class="contact-arrow">→</span>
     </a>
-    <!-- Email construido en JS — Cloudflare no puede ofuscarlo -->
-    <a class="contact-link reveal reveal-delay-2" id="email-link" href="#">
+    <a class="contact-link reveal reveal-delay-3" id="email-link" href="#">
       <span class="contact-icon">✉</span>
-      <div>
-        <div class="contact-lbl">Email</div>
-        <div class="contact-val" id="email-val"></div>
-      </div>
+      <div><div class="contact-lbl">Email</div><div class="contact-val" id="email-val"></div></div>
       <span class="contact-arrow">→</span>
     </a>
   </div>
@@ -622,45 +624,25 @@ footer span { color: var(--red-hi); }
   <p>«El aprendizaje no termina nunca — cada línea de código es un paso adelante»</p>
 </footer>
 
-<!-- JAVASCRIPT -->
 <script>
-  // ── Email: construido en JS para evitar ofuscación de Cloudflare ──
   (function() {
-    var u = 'borjaiturregui';
-    var d = 'gmail' + '.' + 'com';
-    var email = u + '@' + d;
+    var email = 'borjaiturregui' + '@' + 'gmail.com';
     var link = document.getElementById('email-link');
     var val  = document.getElementById('email-val');
     if (link) link.href = 'mailto:' + email;
     if (val)  val.textContent = email;
   })();
 
-  // ── Menú hamburguesa ──
   const burger = document.getElementById('burger');
   const drawer = document.getElementById('drawer');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    drawer.classList.toggle('open');
-  });
-  function closeMenu() {
-    burger.classList.remove('active');
-    drawer.classList.remove('open');
-  }
-  document.addEventListener('click', (e) => {
-    if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu();
-  });
+  burger.addEventListener('click', () => { burger.classList.toggle('active'); drawer.classList.toggle('open'); });
+  function closeMenu() { burger.classList.remove('active'); drawer.classList.remove('open'); }
+  document.addEventListener('click', (e) => { if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu(); });
 
-  // ── Scroll reveal ──
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
