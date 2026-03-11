@@ -9,6 +9,8 @@
 <meta name="author" content="Borja Iturregui" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://borjaiturregui.github.io/" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="sitemap" type="application/xml" href="sitemap.xml" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://borjaiturregui.github.io/" />
 <meta property="og:title" content="Borja Iturregui — Desarrollador Android &amp; Web" />
@@ -89,8 +91,6 @@ nav {
   max-width: 960px; margin: 0 auto; padding: 0 24px;
   height: 56px; display: flex; align-items: center; justify-content: space-between;
 }
-
-/* LOGO — Share Tech Mono con cursor parpadeante */
 .nav-logo {
   font-family: var(--mono);
   font-size: 15px;
@@ -101,7 +101,6 @@ nav {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 0;
 }
 .nav-logo .prompt { color: var(--red-hi); }
 .nav-logo .name   { color: var(--white); }
@@ -113,7 +112,6 @@ nav {
   margin-left: 1px;
   animation: blink 1s step-end infinite;
 }
-
 .nav-links { display: flex; gap: 24px; list-style: none; }
 .nav-links a {
   color: var(--muted); text-decoration: none; font-size: 11px;
@@ -153,7 +151,6 @@ nav {
   align-items: center;
   padding: 80px 0 72px;
 }
-/* En móvil: ocultar terminal, solo texto */
 @media (max-width: 800px) {
   .hero { grid-template-columns: 1fr; padding: 80px 0 60px; gap: 36px; }
 }
@@ -224,6 +221,12 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .service-icon { font-size: 28px; margin-bottom: 16px; }
 .service-name { font-family: var(--display); font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
 .service-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+.service-desc strong { color: var(--white); }
+.service-list { list-style: none; margin-bottom: 18px; display: flex; flex-direction: column; gap: 6px; }
+.service-list li {
+  font-size: 11px; color: var(--muted); padding-left: 14px; position: relative; line-height: 1.6;
+}
+.service-list li::before { content: '→'; position: absolute; left: 0; color: var(--red-hi); font-size: 11px; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .service-tag {
   font-size: 10px; padding: 3px 8px;
@@ -266,15 +269,13 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 }
 .proj-result::before { content: "▸"; flex-shrink: 0; margin-top: 1px; }
 .proj-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-/* Chips rojas para proyectos propios */
 .stack-chip { font-size: 10px; padding: 3px 8px; background: var(--red-dim); border: 1px solid rgba(178,41,72,0.3); border-radius: 2px; color: var(--red-hi); letter-spacing: 0.5px; }
-/* Chips neutras para trabajos de cliente — color visible pero diferenciado */
 .stack-chip.neutral { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--muted); }
 .proj-status { position: absolute; top: 14px; right: 14px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
 .status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
 .status-wip  { background: rgba(249,168,37,0.1); border: 1px solid rgba(249,168,37,0.3); color: #F9A825; }
 
-/* ── HABILIDADES — 4 bloques en grid 2x2 ── */
+/* ── HABILIDADES ── */
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 @media (max-width: 580px) { .skills-grid { grid-template-columns: 1fr; } }
 .skill-block { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 18px; transition: border-color 0.2s; }
@@ -294,21 +295,135 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .principle .p-title { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
 .principle .p-body { font-size: 11px; color: var(--muted); line-height: 1.7; }
 
-/* ── CONTACTO ── */
-.contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 28px; }
+/* ── CONTACTO — FORMULARIO ── */
+.contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 36px; }
 .contact-intro strong { color: var(--white); }
-.contact-row { display: flex; flex-direction: column; gap: 10px; }
-.contact-link {
-  display: flex; align-items: center; gap: 16px; padding: 16px 20px;
-  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
-  text-decoration: none; color: var(--white); transition: border-color 0.2s, padding-left 0.2s;
+
+.form-contacto { display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-grupo { display: flex; flex-direction: column; gap: 7px; }
+
+.form-grupo label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
 }
-.contact-link:hover { border-color: var(--red-hi); padding-left: 28px; }
-.contact-icon { font-size: 18px; width: 24px; text-align: center; }
-.contact-lbl { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
-.contact-val { font-size: 13px; color: var(--white); }
-.contact-arrow { margin-left: auto; color: var(--dim); transition: color 0.2s; }
-.contact-link:hover .contact-arrow { color: var(--red-hi); }
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  letter-spacing: 0.5px;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder { color: var(--dim); }
+
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(123,26,46,0.15);
+}
+
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.7;
+}
+
+.form-grupo select {
+  cursor: crosshair;
+  color: var(--muted);
+  background-color: var(--card);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.form-grupo select option { background: var(--card); color: var(--white); }
+
+/* botón enviar */
+.form-footer { display: flex; flex-direction: column; gap: 12px; }
+
+.btn-enviar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 2px;
+  padding: 12px 22px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: crosshair;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  align-self: flex-start;
+}
+.btn-enviar:hover {
+  background: var(--red-hi);
+  border-color: var(--red-hi);
+  transform: translateY(-1px);
+}
+.btn-enviar:active { transform: translateY(0); }
+.btn-enviar .btn-arrow { transition: transform 0.2s; }
+.btn-enviar:hover .btn-arrow { transform: translateX(4px); }
+.btn-enviar:disabled { opacity: 0.5; cursor: default; }
+
+/* nota responde siempre */
+.responde-nota {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+.responde-nota .dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* estado éxito */
+.form-exito {
+  display: none;
+  background: rgba(63,185,80,0.06);
+  border: 1px solid rgba(63,185,80,0.2);
+  border-radius: 4px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 640px;
+}
+.form-exito.visible { display: flex; animation: fadeup 0.4s ease; }
+.form-exito .exito-icon { font-size: 24px; }
+.form-exito p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.form-exito strong { color: var(--green); }
 
 /* ── FOOTER ── */
 footer {
@@ -343,7 +458,6 @@ footer span { color: var(--red-hi); }
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <!-- Logo: Share Tech Mono con cursor parpadeante -->
     <a class="nav-logo" href="#">
       <span class="prompt">&gt;&nbsp;</span><span class="name">borja</span><span class="cursor"></span>
     </a>
@@ -388,7 +502,6 @@ footer span { color: var(--red-hi); }
         <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
       </div>
     </div>
-    <!-- Terminal: solo visible en escritorio -->
     <div class="terminal fade-in delay-4">
       <div class="term-bar">
         <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
@@ -413,32 +526,47 @@ footer span { color: var(--red-hi); }
     <h2 class="section-title">Servicios</h2>
   </div>
   <div class="services-grid">
+
+    <!-- Web -->
     <div class="service-card reveal reveal-delay-1">
       <div class="service-icon">🛍️</div>
-      <div class="service-name">Webs y tiendas online</div>
-      <div class="service-desc">
-        Diseño y desarrollo de sitios web profesionales y tiendas online. Webs rápidas,
-        seguras y fáciles de gestionar. Integraciones con pasarelas de pago y sistemas de inventario.
-      </div>
+      <div class="service-name">Tu negocio en internet</div>
+      <p class="service-desc">
+        Te construyo una web o tienda online que <strong>funciona, carga rápido y tus clientes pueden encontrar</strong>. Sin tecnicismos, sin complicaciones para ti.
+      </p>
+      <ul class="service-list">
+        <li>Diseño a medida o sobre plantilla profesional</li>
+        <li>Tienda online con pagos integrados desde el día uno</li>
+        <li>Fácil de actualizar tú mismo después</li>
+        <li>Optimizada para móvil y para Google</li>
+      </ul>
       <div class="service-tags">
         <span class="service-tag">WordPress</span>
         <span class="service-tag">WooCommerce</span>
         <span class="service-tag">HTML · CSS</span>
       </div>
     </div>
+
+    <!-- Seguridad básica -->
     <div class="service-card reveal reveal-delay-2">
       <div class="service-icon">🔐</div>
-      <div class="service-name">Seguridad e infraestructura</div>
-      <div class="service-desc">
-        Auditoría de seguridad en sistemas Linux, análisis de vulnerabilidades y hardening.
-        Para pequeñas empresas que necesitan saber que su sistema está bien cerrado.
-      </div>
+      <div class="service-name">Tu web o sistema, más seguro</div>
+      <p class="service-desc">
+        Reviso si tu web o sistema tiene problemas de seguridad evidentes y <strong>te explico qué hacer</strong>. Sin alarmar, sin promesas exageradas.
+      </p>
+      <ul class="service-list">
+        <li>Revisión básica de tu web o servidor</li>
+        <li>Detección de los problemas más comunes</li>
+        <li>Informe claro con los pasos a seguir</li>
+      </ul>
       <div class="service-tags">
         <span class="service-tag">Linux</span>
-        <span class="service-tag">Auditoría</span>
-        <span class="service-tag">Redes</span>
+        <span class="service-tag">Windows</span>
+        <span class="service-tag">WordPress</span>
+        <span class="service-tag">Redes básicas</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -449,7 +577,6 @@ footer span { color: var(--red-hi); }
     <h2 class="section-title">Proyectos</h2>
   </div>
 
-  <!-- TRABAJOS PARA CLIENTES -->
   <div class="projects-block">
     <div class="block-label reveal">Trabajos para clientes</div>
     <div class="project-grid">
@@ -469,13 +596,12 @@ footer span { color: var(--red-hi); }
           <span class="stack-chip neutral">WordPress</span>
           <span class="stack-chip neutral">WooCommerce</span>
           <span class="stack-chip neutral">PHP</span>
-          <span class="stack-chip neutral">CSS</span>
+          <span class="stack-chip neutral">HTML · CSS</span>
         </div>
       </a>
     </div>
   </div>
 
-  <!-- PROYECTOS PROPIOS -->
   <div class="projects-block">
     <div class="block-label reveal">Proyectos propios</div>
     <div class="project-grid">
@@ -483,7 +609,6 @@ footer span { color: var(--red-hi); }
         <span class="proj-status status-live">v1.1.1 activo</span>
         <div class="proj-tag">Proyecto estrella · Android · 2026</div>
         <div class="proj-name">🔐 CriptES</div>
-        <!-- Frase humana primero, técnica después -->
         <p class="proj-human">Una app Android para cifrar y proteger información personal, 100% offline y sin telemetría.</p>
         <div class="proj-desc">
           Cifrado simétrico (AES-256, DES, 3DES, ChaCha20), generador de hashes,
@@ -512,7 +637,7 @@ footer span { color: var(--red-hi); }
   </div>
 </section>
 
-<!-- HABILIDADES — 4 bloques -->
+<!-- HABILIDADES -->
 <section id="skills">
   <div class="section-header reveal">
     <span class="section-num">03</span>
@@ -635,22 +760,52 @@ footer span { color: var(--red-hi); }
     <span class="section-num">06</span>
     <h2 class="section-title">Contacto</h2>
   </div>
+
   <p class="contact-intro reveal reveal-delay-1">
     Si tienes un proyecto en mente — una web, una tienda online, o simplemente
-    quieres saber si puedo ayudarte — <strong>escríbeme</strong>. Respondo siempre.
+    quieres saber si puedo ayudarte — <strong>cuéntame qué necesitas</strong>. Sin compromiso.
   </p>
-  <div class="contact-row">
-    <a class="contact-link reveal reveal-delay-2" href="https://github.com/borjaiturregui" target="_blank" rel="noopener">
-      <span class="contact-icon">⌥</span>
-      <div><div class="contact-lbl">GitHub</div><div class="contact-val">github.com/borjaiturregui</div></div>
-      <span class="contact-arrow">→</span>
-    </a>
-    <a class="contact-link reveal reveal-delay-3" id="email-link" href="#">
-      <span class="contact-icon">✉</span>
-      <div><div class="contact-lbl">Email</div><div class="contact-val" id="email-val"></div></div>
-      <span class="contact-arrow">→</span>
-    </a>
+
+  <form class="form-contacto reveal reveal-delay-2" id="formContacto">
+    <div class="form-row">
+      <div class="form-grupo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+      </div>
+      <div class="form-grupo">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+      </div>
+    </div>
+    <div class="form-grupo">
+      <label for="servicio">¿Qué necesitas?</label>
+      <select id="servicio" name="servicio" required>
+        <option value="" disabled selected>Elige una opción...</option>
+        <option value="web">Web o tienda online</option>
+        <option value="seguridad">Revisar la seguridad de mi web o sistema</option>
+        <option value="otro">No lo tengo claro aún</option>
+      </select>
+    </div>
+    <div class="form-grupo">
+      <label for="mensaje">Cuéntame</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Describe tu proyecto o lo que necesitas. No hace falta que sea técnico." required></textarea>
+    </div>
+    <div class="form-footer">
+      <button type="submit" class="btn-enviar" id="btnEnviar">
+        Enviar mensaje <span class="btn-arrow">→</span>
+      </button>
+      <span class="responde-nota">
+        <span class="dot"></span>
+        Respondo siempre. Tiempo habitual: menos de 24 horas.
+      </span>
+    </div>
+  </form>
+
+  <div class="form-exito" id="formExito">
+    <div class="exito-icon">✓</div>
+    <p><strong>Mensaje enviado.</strong><br>Te respondo en menos de 24 horas.</p>
   </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -660,16 +815,14 @@ footer span { color: var(--red-hi); }
 </footer>
 
 <script>
-  // Email
+  // ── Email obfuscation ──
   (function() {
     var email = 'contacto.borjaiturregui' + '@' + 'gmail.com';
-    var link = document.getElementById('email-link');
-    var val  = document.getElementById('email-val');
-    if (link) link.href = 'mailto:' + email;
-    if (val)  val.textContent = email;
+    // Se usa en el formulario via JS, no se expone en DOM
+    window._contactEmail = email;
   })();
 
-  // Menú hamburguesa
+  // ── Menú hamburguesa ──
   const burger = document.getElementById('burger');
   const drawer = document.getElementById('drawer');
   burger.addEventListener('click', () => {
@@ -684,7 +837,7 @@ footer span { color: var(--red-hi); }
     if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu();
   });
 
-  // Scroll reveal
+  // ── Scroll reveal ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -694,6 +847,43 @@ footer span { color: var(--red-hi); }
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Formulario mailto ──
+  const SERVICIOS = {
+    'web':       'Web o tienda online',
+    'seguridad': 'Revisión de seguridad',
+    'otro':      'No lo tengo claro aún'
+  };
+
+  document.getElementById('formContacto').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre   = document.getElementById('nombre').value.trim();
+    const email    = document.getElementById('email').value.trim();
+    const servicio = document.getElementById('servicio').value;
+    const mensaje  = document.getElementById('mensaje').value.trim();
+    const btn      = document.getElementById('btnEnviar');
+
+    const asunto = '[Web] ' + (SERVICIOS[servicio] || 'Consulta') + ' · ' + nombre;
+    const cuerpo =
+      'Nombre: ' + nombre + '\n' +
+      'Email: ' + email + '\n' +
+      'Servicio: ' + (SERVICIOS[servicio] || servicio) + '\n\n' +
+      mensaje;
+
+    btn.textContent = 'Abriendo correo...';
+    btn.disabled = true;
+
+    window.location.href =
+      'mailto:' + window._contactEmail +
+      '?subject=' + encodeURIComponent(asunto) +
+      '&body='    + encodeURIComponent(cuerpo);
+
+    setTimeout(function() {
+      document.getElementById('formContacto').style.display = 'none';
+      document.getElementById('formExito').classList.add('visible');
+    }, 900);
+  });
 </script>
 </body>
 </html>
