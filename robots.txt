@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://borjaiturregui.github.io/sitemap.xml
