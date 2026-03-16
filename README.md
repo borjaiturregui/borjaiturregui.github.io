@@ -1,6 +1,6 @@
 # Portafolio personal 🧑🏻‍💻
 
-Portfolio personal de Borja Iturregui — desarrollador Android y web con foco en ciberseguridad, basado en Getxo, Bizkaia.
+Portfolio personal de Borja Iturregui — desarrollador Android y web con foco en ciberseguridad.
 
 🌐 **[borjaiturregui.github.io](https://borjaiturregui.github.io)**
 
