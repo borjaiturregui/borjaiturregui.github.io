@@ -39,6 +39,7 @@
   gtag('config', 'G-2FGBBX9QL3');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 <style>
 :root {
@@ -388,7 +389,7 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .btn-enviar:hover .btn-arrow { transform: translateX(4px); }
 .btn-enviar:disabled { opacity: 0.5; cursor: default; }
 
-/* nota responde siempre */
+/* notas bajo el botón */
 .responde-nota {
   font-family: var(--mono);
   font-size: 11px;
@@ -528,7 +529,7 @@ footer span { color: var(--red-hi); }
 
     <!-- Web -->
     <div class="service-card reveal reveal-delay-1">
-      <div class="service-icon">🛍️</div>
+      <div class="service-icon" role="img" aria-label="Tienda online">🛍️</div>
       <div class="service-name">Tu negocio en internet</div>
       <p class="service-desc">
         Te construyo una web o tienda online que <strong>funciona, carga rápido y tus clientes pueden encontrar</strong>. Sin tecnicismos, sin complicaciones para ti.
@@ -548,7 +549,7 @@ footer span { color: var(--red-hi); }
 
     <!-- Seguridad básica -->
     <div class="service-card reveal reveal-delay-2">
-      <div class="service-icon">🔐</div>
+      <div class="service-icon" role="img" aria-label="Seguridad">🔐</div>
       <div class="service-name">Tu web o sistema, más seguro</div>
       <p class="service-desc">
         Reviso si tu web o sistema tiene problemas de seguridad evidentes y <strong>te explico qué hacer</strong>. Sin alarmar, sin promesas exageradas.
@@ -704,17 +705,17 @@ footer span { color: var(--red-hi); }
   </div>
   <div class="about-principles">
     <div class="principle reveal reveal-delay-2">
-      <div class="p-icon">🔐</div>
+      <div class="p-icon" role="img" aria-label="Seguridad">🔐</div>
       <div class="p-title">Seguridad desde el origen</div>
       <div class="p-body">La seguridad no es una capa extra. Es una decisión de arquitectura desde el primer commit.</div>
     </div>
     <div class="principle reveal reveal-delay-3">
-      <div class="p-icon">🎯</div>
+      <div class="p-icon" role="img" aria-label="Objetivo">🎯</div>
       <div class="p-title">Soluciones que duran</div>
       <div class="p-body">No hay proyecto pequeño. Cada web, cada app, cada script tiene que estar bien construido desde el principio.</div>
     </div>
     <div class="principle reveal reveal-delay-4">
-      <div class="p-icon">🛠️</div>
+      <div class="p-icon" role="img" aria-label="Herramientas">🛠️</div>
       <div class="p-title">Construir para entender</div>
       <div class="p-body">La mejor forma de dominar un concepto es implementarlo desde cero. CriptES es ese laboratorio.</div>
     </div>
@@ -797,6 +798,10 @@ footer span { color: var(--red-hi); }
         <span class="dot"></span>
         Respondo siempre. Tiempo habitual: menos de 24 horas.
       </span>
+      <span class="responde-nota" style="margin-top: 2px;">
+        <span class="dot" style="background: var(--muted); animation: none;"></span>
+        Getxo, Bizkaia &mdash; disponible en remoto
+      </span>
     </div>
   </form>
 
@@ -817,7 +822,6 @@ footer span { color: var(--red-hi); }
   // ── Email obfuscation ──
   (function() {
     var email = 'contacto.borjaiturregui' + '@' + 'gmail.com';
-    // Se usa en el formulario via JS, no se expone en DOM
     window._contactEmail = email;
   })();
 
