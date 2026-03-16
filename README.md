@@ -17,6 +17,7 @@ Portfolio personal de Borja Iturregui — desarrollador Android y web con foco e
 ├── index.html                  # Portfolio principal
 ├── robots.txt
 └── sitemap.xml
+└── README.md
 ```
 
 HTML · CSS · JavaScript vanilla.
