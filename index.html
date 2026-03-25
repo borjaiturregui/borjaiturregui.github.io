@@ -157,32 +157,6 @@ nav {
 .btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--dim); }
 .btn-ghost:hover { border-color: var(--white); }
 
-/* ── TERMINAL ── */
-.terminal {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 4px; overflow: hidden; font-size: 13px;
-  animation: fadeup 1s ease 0.4s both; align-self: center;
-}
-.term-bar {
-  background: var(--card); padding: 10px 14px;
-  display: flex; gap: 6px; align-items: center;
-  border-bottom: 1px solid var(--border);
-}
-.term-dot { width: 10px; height: 10px; border-radius: 50%; }
-.term-dot:nth-child(1) { background: #ff5f57; }
-.term-dot:nth-child(2) { background: #ffbd2e; }
-.term-dot:nth-child(3) { background: #28c840; }
-.term-title { font-size: 11px; color: var(--muted); margin: 0 auto; }
-.term-body { padding: 20px; line-height: 2.2; color: var(--muted); }
-.term-body .prompt { color: var(--red-hi); }
-.term-body .cmd    { color: var(--white); }
-.term-body .out    { color: var(--green); }
-.term-body .blink-cur {
-  display: inline-block; width: 8px; height: 14px;
-  background: var(--red-hi); vertical-align: middle;
-  animation: blink 1s step-end infinite;
-}
-
 /* ── SECCIONES ── */
 section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 72px 24px; }
 .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
@@ -255,27 +229,6 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .proj-status { position: absolute; top: 14px; right: 14px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
 .status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
 .status-wip  { background: rgba(249,168,37,0.1); border: 1px solid rgba(249,168,37,0.3); color: #F9A825; }
-
-/* ── HABILIDADES ── */
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-@media (max-width: 680px) { .skills-grid { grid-template-columns: 1fr; } }
-@media (max-width: 900px) and (min-width: 681px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-.skill-block { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 18px; transition: border-color 0.2s; }
-.skill-block:hover { border-color: var(--red); }
-.skill-cat { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 12px; }
-.skill-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.skill-list li { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-.skill-list li::before { content: "▸"; color: var(--red-hi); flex-shrink: 0; }
-
-/* ── SOBRE MÍ ── */
-.about-text { font-size: 13px; color: var(--muted); line-height: 1.95; max-width: 680px; margin-bottom: 28px; }
-.about-text strong { color: var(--white); }
-.about-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-@media (max-width: 580px) { .about-principles { grid-template-columns: 1fr; } }
-.principle { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 18px 16px; }
-.principle .p-icon { font-size: 20px; margin-bottom: 10px; }
-.principle .p-title { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.principle .p-body { font-size: 11px; color: var(--muted); line-height: 1.7; }
 
 /* ── CONTACTO ── */
 .contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 36px; }
@@ -409,20 +362,6 @@ footer span { color: var(--red-hi); }
         <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
       </div>
     </div>
-    <div class="terminal fade-in delay-4">
-      <div class="term-bar">
-        <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
-        <span class="term-title">borja — terminal</span>
-      </div>
-      <div class="term-body">
-        <div><span class="prompt">~/borja $</span> <span class="cmd">skills --list</span></div>
-        <div><span class="out">✓ Android · Kotlin</span></div>
-        <div><span class="out">✓ Web · WordPress · WooCommerce</span></div>
-        <div><span class="out">✓ Python · Shell · Linux</span></div>
-        <div><span class="out">✓ Git · JavaScript</span></div>
-        <div><span class="prompt">~/borja $</span> <span class="blink-cur"></span></div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -504,80 +443,6 @@ footer span { color: var(--red-hi); }
           <span class="stack-chip">Clean Architecture</span>
         </div>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- HABILIDADES -->
-<section id="skills">
-  <div class="section-header reveal">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Habilidades</h2>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-block reveal reveal-delay-1">
-      <div class="skill-cat">Android &amp; Apps</div>
-      <ul class="skill-list">
-        <li>Kotlin</li>
-        <li>Jetpack Compose</li>
-        <li>Android Studio</li>
-        <li>Coroutines + Flow</li>
-        <li>Clean Architecture · MVVM</li>
-      </ul>
-    </div>
-    <div class="skill-block reveal reveal-delay-2">
-      <div class="skill-cat">Web &amp; E-commerce</div>
-      <ul class="skill-list">
-        <li>WordPress</li>
-        <li>WooCommerce</li>
-        <li>HTML &amp; CSS</li>
-        <li>JavaScript</li>
-        <li>PHP (básico)</li>
-      </ul>
-    </div>
-    <div class="skill-block reveal reveal-delay-3">
-      <div class="skill-cat">Lenguajes &amp; Herramientas</div>
-      <ul class="skill-list">
-        <li>Python · Shell / Bash</li>
-        <li>Git &amp; GitHub</li>
-        <li>Linux · GNS3</li>
-        <li>Wireshark · Nmap</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE MÍ -->
-<section id="sobre-mi">
-  <div class="section-header reveal">
-    <span class="section-num">04</span>
-    <h2 class="section-title">Sobre mí</h2>
-  </div>
-  <div class="about-text reveal reveal-delay-1">
-    Soy desarrollador con foco en <strong>Android y desarrollo web</strong>.
-    Empecé a programar por curiosidad sobre cómo funcionan los sistemas por dentro,
-    y esa curiosidad es la que sigue guiando cada proyecto que construyo.<br><br>
-    Trabajo tanto en proyectos propios — como <strong>CriptES</strong>, una app Android para cifrar y
-    proteger información personal — como para negocios que necesitan presencia digital sólida:
-    webs, tiendas online y soluciones a medida que funcionan de verdad y son fáciles de mantener.<br><br>
-    Mi objetivo es crecer como desarrollador y ser útil tanto a proyectos técnicos
-    ambiciosos como a negocios que quieren digitalizarse sin complicaciones.
-  </div>
-  <div class="about-principles">
-    <div class="principle reveal reveal-delay-2">
-      <div class="p-icon" role="img" aria-label="Seguridad">🔐</div>
-      <div class="p-title">Seguridad desde el origen</div>
-      <div class="p-body">La seguridad no es una capa extra. Es una decisión de arquitectura desde el primer commit.</div>
-    </div>
-    <div class="principle reveal reveal-delay-3">
-      <div class="p-icon" role="img" aria-label="Objetivo">🎯</div>
-      <div class="p-title">Soluciones que duran</div>
-      <div class="p-body">No hay proyecto pequeño. Cada web, cada app, cada script tiene que estar bien construido desde el principio.</div>
-    </div>
-    <div class="principle reveal reveal-delay-4">
-      <div class="p-icon" role="img" aria-label="Herramientas">🛠️</div>
-      <div class="p-title">Construir para entender</div>
-      <div class="p-body">La mejor forma de dominar un concepto es implementarlo desde cero. CriptES es ese laboratorio.</div>
     </div>
   </div>
 </section>
