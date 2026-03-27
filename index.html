@@ -44,15 +44,14 @@
 <style>
 :root {
   --black:   #000000;
-  --surface: #111111;
   --card:    #161616;
   --border:  #1e1e1e;
   --red:     #7B1A2E;
   --red-hi:  #B22948;
   --red-dim: rgba(123, 26, 46, 0.18);
   --white:   #ffffff;
-  --muted:   #888888;
-  --dim:     #333333;
+  --muted:   #a0a0a0;
+  --dim:     #666666;
   --green:   #3fb950;
   --mono:    'Share Tech Mono', monospace;
   --display: 'Syne', sans-serif;
@@ -70,8 +69,9 @@ body::after {
   content: '';
   position: fixed; inset: 0;
   background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
-  pointer-events: none; z-index: 999;
+  pointer-events: none; z-index: 100;
 }
+.hidden { display: none !important; }
 .grid-bg {
   position: fixed; inset: 0;
   background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -151,7 +151,7 @@ nav {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 11px 22px; border-radius: 2px; font-family: var(--mono);
   font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
-  text-decoration: none; transition: all 0.2s; cursor: crosshair;
+  text-decoration: none; transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn-primary { background: var(--red); color: var(--white); border: 1px solid var(--red); }
 .btn-primary:hover { background: var(--red-hi); border-color: var(--red-hi); }
@@ -177,9 +177,6 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .service-card-full {
   background: var(--card); border: 1px solid var(--border); border-radius: 4px;
   padding: 28px 22px; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s;
-}
-.service-card-full.span-full {
-  grid-column: 1 / -1;
 }
 .service-card-full::before {
   content: ''; position: absolute; top: 0; left: 0;
@@ -227,20 +224,9 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .project-card.featured { grid-column: 1 / -1; }
 .project-card.client { border-left: 3px solid var(--red-hi); }
 
-/* Bloque dev — visualmente separado y apagado */
-.projects-block.dev-block { opacity: 0.72; }
-.projects-block.dev-block .block-label { color: var(--dim); }
-.projects-block.dev-block .block-label::after { background: var(--dim); }
-.dev-note {
-  font-size: 11px; color: var(--dim); margin-bottom: 14px;
-  padding: 8px 12px; border-left: 2px solid var(--dim);
-  line-height: 1.6;
-}
-
 .proj-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 8px; }
 .proj-name { font-family: var(--display); font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .proj-desc { font-size: 12px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
-.proj-human { font-size: 13px; color: var(--white); line-height: 1.7; margin-bottom: 10px; }
 .proj-result {
   font-size: 11px; color: var(--green);
   display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; line-height: 1.6;
@@ -358,7 +344,7 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .form-grupo select:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(123,26,46,0.15); }
 .form-grupo textarea { resize: vertical; min-height: 130px; line-height: 1.7; }
 .form-grupo select {
-  cursor: crosshair; color: var(--muted); background-color: var(--card);
+  color: var(--muted); background-color: var(--card);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
 }
@@ -369,7 +355,7 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
   background: var(--red); border: 1px solid var(--red); border-radius: 2px;
   padding: 12px 22px; font-family: var(--mono); font-size: 11px;
   letter-spacing: 1.5px; text-transform: uppercase; color: var(--white);
-  cursor: crosshair; transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
   align-self: flex-start;
 }
 .btn-enviar:hover { background: var(--red-hi); border-color: var(--red-hi); transform: translateY(-1px); }
@@ -435,19 +421,20 @@ footer a:hover { color: var(--red-hi); }
       <li><a href="#blog">Blog</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <button class="nav-burger" id="burger" aria-label="Menú">
+    <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="nav-drawer" id="drawer">
-    <a href="#servicios" onclick="closeMenu()">Servicios</a>
-    <a href="#proyectos" onclick="closeMenu()">Proyectos</a>
-    <a href="#blog"      onclick="closeMenu()">Blog</a>
-    <a href="#contacto"  onclick="closeMenu()">Contacto</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <!-- HERO -->
+<main>
 <div class="hero-wrap">
   <div class="hero">
     <div class="hero-tag fade-in">Desarrollo · Web · Android</div>
@@ -551,32 +538,7 @@ footer a:hover { color: var(--red-hi); }
     </div>
   </div>
 
-  <!-- Proyectos técnicos personales — bloque secundario -->
-  <div class="projects-block dev-block">
-    <div class="block-label reveal">Proyectos técnicos personales</div>
-    <p class="dev-note reveal">
-      Desarrollo en paralelo proyectos propios centrados en Android y ciberseguridad.
-      Si tienes curiosidad técnica, puedes verlos en <a href="https://github.com/borjaiturregui" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:underline;">GitHub</a>.
-    </p>
-    <div class="project-grid">
-      <a class="project-card featured reveal reveal-delay-1" href="https://github.com/borjaiturregui/CriptES" target="_blank" rel="noopener">
-        <span class="proj-status status-live">v1.1.1 activo</span>
-        <div class="proj-tag">Android · Kotlin · 2026</div>
-        <div class="proj-name">🔐 CriptES</div>
-        <p class="proj-desc">
-          App Android de cifrado y seguridad de datos, 100% offline. AES-256, generador de hashes,
-          esteganografía LSB y modo educativo que explica cada algoritmo.
-          Clean Architecture + MVVM + Bouncy Castle.
-        </p>
-        <div class="proj-stack">
-          <span class="stack-chip">Kotlin</span>
-          <span class="stack-chip">Jetpack Compose</span>
-          <span class="stack-chip">Bouncy Castle</span>
-          <span class="stack-chip">Clean Architecture</span>
-        </div>
-      </a>
-    </div>
-  </div>
+
 </section>
 
 <!-- BLOG -->
@@ -667,6 +629,7 @@ footer a:hover { color: var(--red-hi); }
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <p>Hecho con <span>♥</span> por Borja Iturregui</p>
@@ -678,24 +641,32 @@ footer a:hover { color: var(--red-hi); }
 </footer>
 
 <script>
+  /* Email ofuscado */
   (function() {
-    var email = 'contacto.borjaiturregui' + '@' + 'gmail.com';
-    window._contactEmail = email;
+    window._contactEmail = 'contacto.borjaiturregui' + '@' + 'gmail.com';
   })();
 
-  /* Menú móvil */
+  /* Menú móvil — event delegation, sin onclicks inline, aria-expanded */
   const burger = document.getElementById('burger');
   const drawer = document.getElementById('drawer');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    drawer.classList.toggle('open');
-  });
-  function closeMenu() {
-    burger.classList.remove('active');
-    drawer.classList.remove('open');
+
+  function abrirMenu(estado) {
+    burger.classList.toggle('active', estado);
+    drawer.classList.toggle('open', estado);
+    burger.setAttribute('aria-expanded', estado);
   }
+
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    abrirMenu(drawer.classList.contains('open') ? false : true);
+  });
+
+  drawer.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') abrirMenu(false);
+  });
+
   document.addEventListener('click', (e) => {
-    if (!burger.contains(e.target) && !drawer.contains(e.target)) closeMenu();
+    if (!burger.contains(e.target) && !drawer.contains(e.target)) abrirMenu(false);
   });
 
   /* Scroll reveal */
@@ -738,7 +709,7 @@ footer a:hover { color: var(--red-hi); }
       '&body='    + encodeURIComponent(cuerpo);
 
     setTimeout(function() {
-      document.getElementById('formContacto').style.display = 'none';
+      document.getElementById('formContacto').classList.add('hidden');
       document.getElementById('formExito').classList.add('visible');
     }, 900);
   });
