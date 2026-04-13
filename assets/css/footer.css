@@ -1,0 +1,12 @@
+/* footer.css — Pie de página
+   Autor: Borja Iturregui — borjaiturregui.github.io */
+
+footer {
+  position: relative; z-index: 1; border-top: 1px solid var(--border);
+  max-width: 960px; margin: 0 auto; padding: 24px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+footer p { font-size: 11px; color: var(--dim); }
+footer span { color: var(--red-hi); }
+footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--red-hi); }

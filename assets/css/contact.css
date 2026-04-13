@@ -1,0 +1,85 @@
+/* contact.css — Formulario de contacto, estados de éxito y error, honeypot
+   Autor: Borja Iturregui — borjaiturregui.github.io */
+
+.contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 36px; }
+.contact-intro strong { color: var(--white); }
+
+.form-contacto { display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+.form-grupo { display: flex; flex-direction: column; gap: 7px; }
+.form-grupo label { font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+  background: var(--card); border: 1px solid var(--border); border-radius: 4px;
+  padding: 12px 14px; font-family: var(--mono); font-size: 12px; color: var(--white);
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%; -webkit-appearance: none; appearance: none; letter-spacing: 0.5px;
+}
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder { color: var(--dim); }
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(123,26,46,0.15); }
+
+.form-grupo textarea { resize: vertical; min-height: 130px; line-height: 1.7; }
+.form-grupo select {
+  color: var(--muted); background-color: var(--card);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
+}
+.form-grupo select option { background: var(--card); color: var(--white); }
+
+.form-footer { display: flex; flex-direction: column; gap: 12px; }
+
+.btn-enviar {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--red); border: 1px solid var(--red); border-radius: 2px;
+  padding: 12px 22px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--white);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  align-self: flex-start; cursor: crosshair;
+}
+.btn-enviar:hover { background: var(--red-hi); border-color: var(--red-hi); transform: translateY(-1px); }
+.btn-enviar:active { transform: translateY(0); }
+.btn-enviar .btn-arrow { transition: transform 0.2s; }
+.btn-enviar:hover .btn-arrow { transform: translateX(4px); }
+.btn-enviar:disabled { opacity: 0.5; cursor: default; }
+
+.responde-nota {
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
+  display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px;
+}
+.responde-nota .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; animation: pulse 2s infinite; }
+.responde-nota .dot-muted { width: 6px; height: 6px; background: var(--muted); border-radius: 50%; flex-shrink: 0; }
+
+/* ── HONEYPOT ANTI-SPAM ── */
+.form-hp { display: none; }
+
+/* ── ESTADO ÉXITO ── */
+.form-exito {
+  display: none; background: rgba(63,185,80,0.06); border: 1px solid rgba(63,185,80,0.2);
+  border-radius: 4px; padding: 24px; flex-direction: column; align-items: flex-start; gap: 8px; max-width: 640px;
+}
+.form-exito.visible { display: flex; animation: fadeup 0.4s ease; }
+.form-exito .exito-icon { font-size: 24px; }
+.form-exito p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.form-exito strong { color: var(--green); }
+
+/* ── ESTADO ERROR ── */
+.form-error {
+  display: none;
+  background: rgba(178, 41, 72, 0.06);
+  border: 1px solid rgba(178, 41, 72, 0.25);
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 12px;
+  color: #e57373;
+  max-width: 640px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.form-error.visible { display: block; animation: fadeup 0.4s ease; }
