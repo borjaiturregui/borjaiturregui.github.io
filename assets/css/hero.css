@@ -1,0 +1,31 @@
+/* hero.css — Sección hero, tipografía principal y estilos de botones
+   Autor: Borja Iturregui — borjaiturregui.github.io */
+
+.hero-wrap { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.hero {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  padding: 120px 0 80px;
+}
+
+.hero-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--red-hi); }
+
+.hero h1 { font-family: var(--display); font-size: clamp(36px, 5.5vw, 68px); font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 24px; }
+.hero h1 .line-red { color: var(--red-hi); display: block; }
+
+.hero-desc { font-size: 13px; color: var(--muted); line-height: 1.85; max-width: 480px; margin-bottom: 36px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── BOTONES ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 2px; font-family: var(--mono);
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  text-decoration: none; transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.btn-primary { background: var(--red); color: var(--white); border: 1px solid var(--red); }
+.btn-primary:hover { background: var(--red-hi); border-color: var(--red-hi); }
+.btn-ghost { background: transparent; color: var(--white); border: 1px solid var(--dim); }
+.btn-ghost:hover { border-color: var(--white); }
