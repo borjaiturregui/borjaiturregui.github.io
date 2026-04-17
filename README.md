@@ -1,6 +1,6 @@
 # Portafolio personal 🧑🏻‍💻
 
-Portfolio personal de Borja Iturregui — desarrollador Android y web con foco en ciberseguridad.
+Portfolio personal de Borja Iturregui — desarrollador web.
 
 🌐 **[borjaiturregui.github.io](https://borjaiturregui.github.io)**
 
