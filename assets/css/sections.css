@@ -10,10 +10,28 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 
 /* ── SERVICIOS ── */
 .services-group-label {
-  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.services-group-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.services-group-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+}
+
+.services-packages-wrap {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px;
+  background: rgba(255,255,255,0.02);
+}
 
 .services-grid {
   display: grid;
@@ -28,6 +46,7 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
   .services-grid-single { grid-template-columns: 1fr; }
+  .services-packages-wrap { padding: 12px; }
 }
 
 .service-card-full {
@@ -42,20 +61,27 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .service-card-full:hover { border-color: var(--red); transform: translateY(-2px); }
 .service-card-full:hover::before { transform: scaleX(1); }
 
-.service-card-addon {
-  opacity: 0.85;
-}
+.service-card-addon { opacity: 0.8; }
 
 /* ── BADGE BASE / PRO ── */
 .service-badge {
   display: inline-block;
-  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 2px; margin-bottom: 14px;
-  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
-  color: var(--muted);
+  font-family: var(--display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
 }
 .service-badge-pro {
-  background: var(--red-dim); border-color: rgba(178,41,72,0.4); color: var(--red-hi);
+  background: var(--red-dim);
+  border-color: rgba(178,41,72,0.5);
+  color: var(--red-hi);
 }
 
 .service-icon { font-size: 28px; margin-bottom: 16px; }
