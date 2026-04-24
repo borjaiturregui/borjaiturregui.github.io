@@ -61,10 +61,15 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 }
 
 .service-price-note {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 2px;
   font-size: 10px;
   color: var(--muted);
-  margin-top: 6px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 /* ── PROYECTOS ── */
