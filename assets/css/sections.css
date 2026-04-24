@@ -48,28 +48,15 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .service-price {
   display: inline-block;
   margin-top: 4px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   background: var(--red-dim);
   border: 1px solid rgba(178,41,72,0.4);
   border-radius: 2px;
   font-family: var(--display);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   color: var(--red-hi);
   letter-spacing: -0.3px;
-  white-space: nowrap;
-}
-
-.service-price-note {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.5px;
 }
 
 /* ── PROYECTOS ── */
