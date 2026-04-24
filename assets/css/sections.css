@@ -48,15 +48,16 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .service-price {
   display: inline-block;
   margin-top: 4px;
-  padding: 8px 14px;
+  padding: 6px 12px;
   background: var(--red-dim);
   border: 1px solid rgba(178,41,72,0.4);
   border-radius: 2px;
   font-family: var(--display);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 800;
   color: var(--red-hi);
   letter-spacing: -0.3px;
+  white-space: nowrap;
 }
 
 /* ── PROYECTOS ── */
