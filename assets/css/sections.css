@@ -60,6 +60,13 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
   white-space: nowrap;
 }
 
+.service-price-note {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
 /* ── PROYECTOS ── */
 .projects-block { margin-bottom: 40px; }
 .projects-block:last-child { margin-bottom: 0; }
