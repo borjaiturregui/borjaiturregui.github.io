@@ -44,20 +44,6 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
   border-radius: 2px; color: var(--muted); letter-spacing: 0.5px;
 }
 
-.service-price {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 6px 14px;
-  font-family: var(--display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--red-hi);
-  background: var(--red-dim);
-  border: 1px solid rgba(178,41,72,0.3);
-  border-radius: 3px;
-  letter-spacing: 0.3px;
-}
-
 /* ── PROYECTOS ── */
 .projects-block { margin-bottom: 40px; }
 .projects-block:last-child { margin-bottom: 0; }
