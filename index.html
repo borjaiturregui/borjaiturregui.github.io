@@ -98,10 +98,13 @@
     <span class="section-num">01</span>
     <h2 class="section-title">Servicios</h2>
   </div>
-  <div class="services-grid">
+  <!-- Paquetes principales -->
+  <div class="services-group-label reveal">Paquetes</div>
+  <div class="services-grid reveal reveal-delay-1">
 
-    <!-- Web y tienda online -->
-    <div class="service-card-full reveal reveal-delay-1">
+    <!-- Paquete Base -->
+    <div class="service-card-full">
+      <div class="service-badge">Base</div>
       <div class="service-icon" role="img" aria-label="Tienda online">🛍️</div>
       <div class="service-name">Tu negocio en internet</div>
       <p class="service-desc">
@@ -122,8 +125,38 @@
       <p class="service-price">Desde 450 €</p>
     </div>
 
-    <!-- Mantenimiento web -->
-    <div class="service-card-full reveal reveal-delay-2">
+    <!-- Paquete Pro -->
+    <div class="service-card-full service-card-pro">
+      <div class="service-badge service-badge-pro">Pro</div>
+      <div class="service-icon" role="img" aria-label="Seguridad">🔒</div>
+      <div class="service-name">Blindaje digital</div>
+      <p class="service-desc">
+        La mayoría de autónomos tienen vulnerabilidades que no saben que existen. <strong>Las encuentro, te las explico y te ayudo a cerrarlas</strong> antes de que sean un problema.
+      </p>
+      <ul class="service-list">
+        <li>Todo lo incluido en el paquete base, más:</li>
+        <li>Comprobación de contraseñas y cuentas comprometidas</li>
+        <li>Revisión y configuración de seguridad del correo (SPF, DKIM, DMARC)</li>
+        <li>Revisión de permisos en herramientas clave (Google, Meta, etc.)</li>
+        <li>Informe PDF con hallazgos y recomendaciones priorizadas</li>
+        <li>Sesión de 30 min para explicar los resultados</li>
+      </ul>
+      <div class="service-tags">
+        <span class="service-tag">Ciberseguridad</span>
+        <span class="service-tag">Correo</span>
+        <span class="service-tag">Auditoría</span>
+      </div>
+      <p class="service-price">Desde 650 €</p>
+      <p class="service-price-note">Incluye web completa</p>
+    </div>
+
+  </div>
+
+  <!-- Complemento -->
+  <div class="services-group-label reveal" style="margin-top: 28px;">Complemento opcional</div>
+  <div class="services-grid-single reveal reveal-delay-1">
+
+    <div class="service-card-full service-card-addon">
       <div class="service-icon" role="img" aria-label="Mantenimiento">🔧</div>
       <div class="service-name">Mantenimiento y soporte</div>
       <p class="service-desc">
@@ -141,29 +174,6 @@
         <span class="service-tag">Soporte</span>
       </div>
       <p class="service-price">Desde 35 €/mes</p>
-    </div>
-
-    <!-- Auditoría de seguridad -->
-    <div class="service-card-full reveal reveal-delay-3">
-      <div class="service-icon" role="img" aria-label="Seguridad">🔒</div>
-      <div class="service-name">Blindaje digital</div>
-      <p class="service-desc">
-        La mayoría de autónomos tienen vulnerabilidades que no saben que existen. <strong>Las encuentro, te las explico y te ayudo a cerrarlas</strong> antes de que sean un problema.
-      </p>
-      <ul class="service-list">
-        <li>Comprobación de contraseñas y cuentas comprometidas</li>
-        <li>Revisión y configuración de seguridad del correo (SPF, DKIM, DMARC)</li>
-        <li>Revisión de permisos en herramientas clave (Google, Meta, etc.)</li>
-        <li>Informe PDF con hallazgos y recomendaciones priorizadas</li>
-        <li>Sesión de 30 min para explicar los resultados</li>
-      </ul>
-      <div class="service-tags">
-        <span class="service-tag">Ciberseguridad</span>
-        <span class="service-tag">Correo</span>
-        <span class="service-tag">Auditoría</span>
-      </div>
-      <p class="service-price">Desde 650 €</p>
-      <p class="service-price-note">Incluye web completa</p>
     </div>
 
   </div>
