@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Política de cookies — Borja Iturregui</title>
+<meta name="description" content="Política de cookies de Borja Iturregui — qué cookies se usan, para qué y cómo gestionarlas." />
+<meta name="robots" content="noindex, follow" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/nav.css" />
+<link rel="stylesheet" href="assets/css/hero.css" />
+<link rel="stylesheet" href="assets/css/sections.css" />
+<link rel="stylesheet" href="assets/css/contact.css" />
+<link rel="stylesheet" href="assets/css/footer.css" />
+<link rel="stylesheet" href="assets/css/cookies.css" />
+<style>
+  .legal-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+  }
+
+  .legal-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #6b6b6b;
+    text-decoration: none;
+    margin-bottom: 48px;
+    font-family: 'Share Tech Mono', monospace;
+    transition: color 0.2s;
+  }
+
+  .legal-volver:hover { color: #C94E6A; }
+  .legal-volver::before { content: '←'; }
+
+  .legal-etiqueta {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: #C94E6A;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .legal-titulo {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .legal-fecha {
+    font-size: 0.8rem;
+    color: #6b6b6b;
+    margin-bottom: 56px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .legal-seccion { margin-bottom: 40px; }
+
+  .legal-seccion h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .legal-seccion p,
+  .legal-seccion li {
+    font-size: 0.9rem;
+    color: #9E9E9E;
+    line-height: 1.8;
+  }
+
+  .legal-seccion ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .legal-seccion ul li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .legal-seccion ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #7B1A2E;
+  }
+
+  .legal-separador {
+    border: none;
+    border-top: 1px solid #2A2A2A;
+    margin: 40px 0;
+  }
+
+  /* Tabla de cookies */
+  .cookie-tabla-wrap {
+    overflow-x: auto;
+    margin-top: 16px;
+    border-radius: 8px;
+    border: 1px solid #2A2A2A;
+  }
+
+  .cookie-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    color: #9E9E9E;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .cookie-tabla thead th {
+    background: #111111;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #2A2A2A;
+    white-space: nowrap;
+  }
+
+  .cookie-tabla tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid #2A2A2A;
+    vertical-align: top;
+  }
+
+  .cookie-tabla tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .cookie-tabla tbody tr:hover td {
+    background: #0f0f0f;
+  }
+
+  /* Botón de retirar consentimiento */
+  .btn-retirar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #2A2A2A;
+    border-radius: 6px;
+    color: #9E9E9E;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-retirar:hover {
+    border-color: #C94E6A;
+    color: #C94E6A;
+  }
+
+  .btn-retirar-ok {
+    display: none;
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: #4CAF50;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .btn-retirar-ok.visible { display: block; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="prompt">&gt;&nbsp;</span><span class="name">borja</span><span class="cursor"></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-drawer" id="drawer">
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#proyectos">Proyectos</a>
+    <a href="index.html#contacto">Contacto</a>
+  </div>
+</nav>
+
+<main>
+  <div class="legal-wrap">
+
+    <a class="legal-volver" href="index.html">Volver al inicio</a>
+
+    <p class="legal-etiqueta">Legal</p>
+    <h1 class="legal-titulo">Política de cookies</h1>
+    <p class="legal-fecha">Última actualización: abril 2026</p>
+
+    <div class="legal-seccion">
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>
+        Las cookies son pequeños archivos de texto que un sitio web almacena en tu
+        dispositivo cuando lo visitas. Sirven para recordar preferencias, medir el uso
+        del sitio o identificar sesiones de usuario.
+      </p>
+    </div>
+
+    <hr class="legal-separador" />
+
+    <div class="legal-seccion">
+      <h2>2. Cookies que usa este sitio</h2>
+      <p>
+        Este sitio web utiliza <strong>únicamente cookies de análisis de terceros</strong>
+        a través de <strong>Google Analytics 4 (GA4)</strong>, y solo si has dado tu
+        consentimiento previo. Si rechazas las cookies, no se instala ninguna cookie
+        en tu dispositivo.
+      </p>
+
+      <div class="cookie-tabla-wrap">
+        <table class="cookie-tabla">
+          <thead>
+            <tr>
+              <th>Cookie</th>
+              <th>Proveedor</th>
+              <th>Finalidad</th>
+              <th>Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>_ga</td>
+              <td>Google LLC</td>
+              <td>Distingue usuarios únicos para analítica de visitas</td>
+              <td>2 años</td>
+            </tr>
+            <tr>
+              <td>_ga_XXXXXXXX</td>
+              <td>Google LLC</td>
+              <td>Mantiene el estado de la sesión de GA4</td>
+              <td>2 años</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="margin-top: 16px;">
+        Google puede tratar los datos recogidos según su
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:#C94E6A;">política de privacidad</a>.
+        Los datos de analítica son anónimos y no permiten identificar a usuarios concretos.
+      </p>
+    </div>
+
+    <hr class="legal-separador" />
+
+    <div class="legal-seccion">
+      <h2>3. Cómo gestionar o retirar el consentimiento</h2>
+      <p>
+        Puedes cambiar tu decisión en cualquier momento. Si retiras el consentimiento,
+        Google Analytics dejará de cargarse en tu próxima visita.
+      </p>
+
+      <button class="btn-retirar" id="btnRetirar">
+        ✕ &nbsp;Retirar mi consentimiento de cookies
+      </button>
+      <p class="btn-retirar-ok" id="retirarOk">
+        ✓ &nbsp;Consentimiento retirado. GA4 no se cargará en tu próxima visita.
+      </p>
+
+      <p style="margin-top: 24px;">
+        También puedes bloquear o eliminar cookies desde la configuración de tu navegador:
+      </p>
+      <ul>
+        <li>
+          <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener" style="color:#C94E6A;">Google Chrome</a>
+        </li>
+        <li>
+          <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener" style="color:#C94E6A;">Mozilla Firefox</a>
+        </li>
+        <li>
+          <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener" style="color:#C94E6A;">Safari</a>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="legal-separador" />
+
+    <div class="legal-seccion">
+      <h2>4. Más información</h2>
+      <p>
+        Para cualquier duda sobre el uso de cookies en este sitio,
+        escríbeme a <strong>contacto.borjaiturregui@gmail.com</strong>.
+      </p>
+      <p>
+        Puedes consultar también la
+        <a href="https://www.aepd.es/es/areas-de-actuacion/internet-y-redes-sociales/cookies" target="_blank" rel="noopener" style="color:#C94E6A;">guía sobre cookies de la AEPD</a>.
+      </p>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="https://github.com/borjaiturregui" target="_blank" rel="noopener">GitHub</a>
+    &nbsp;·&nbsp;
+    Getxo, Bizkaia &mdash; disponible en remoto
+  </p>
+  <p class="footer-legal">
+    &copy; 2026 Borja Iturregui
+    &nbsp;·&nbsp;
+    <a href="aviso-legal.html">Aviso legal</a>
+    &nbsp;·&nbsp;
+    <a href="privacidad.html">Privacidad</a>
+    &nbsp;·&nbsp;
+    <a href="cookies.html">Cookies</a>
+  </p>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script>
+  /* Botón de retirar consentimiento en la propia página de cookies */
+  document.getElementById('btnRetirar').addEventListener('click', function () {
+    localStorage.setItem('cookies_consent', 'rechazado');
+    document.getElementById('retirarOk').classList.add('visible');
+    this.disabled = true;
+    this.style.opacity = '0.4';
+  });
+</script>
+</body>
+</html>
