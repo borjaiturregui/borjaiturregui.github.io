@@ -7,7 +7,8 @@ footer {
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
 }
 footer p { font-size: 11px; color: var(--dim); }
-footer span { color: var(--red-hi); }
+/* Solo afecta a spans que NO sean bloques del footer-legal */
+footer span:not(.footer-bloque-izq):not(.footer-bloque-der):not(.footer-sep) { color: var(--red-hi); }
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--red-hi); }
 
@@ -19,30 +20,23 @@ footer a:hover { color: var(--red-hi); }
   white-space: nowrap;
 }
 
-/* En escritorio: todo en línea, sin cambios */
+/* En escritorio: todo en línea */
 .footer-bloque-izq,
 .footer-sep,
 .footer-bloque-der {
   display: inline;
   white-space: nowrap;
+  color: var(--dim); /* anula herencia del span genérico */
 }
 
 /* En móvil: dos líneas limpias */
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .footer-legal {
     white-space: normal;
     line-height: 1.9;
   }
 
-  .footer-sep {
-    display: none; /* ocultamos el · central */
-  }
-
-  .footer-bloque-izq {
-    display: block;
-  }
-
-  .footer-bloque-der {
-    display: block;
-  }
+  .footer-sep { display: none; }
+  .footer-bloque-izq { display: block; }
+  .footer-bloque-der { display: block; }
 }
