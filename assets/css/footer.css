@@ -10,3 +10,20 @@ footer p { font-size: 11px; color: var(--dim); }
 footer span { color: var(--red-hi); }
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--red-hi); }
+
+/* ── Legal: una sola línea ── */
+.footer-legal {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  color: var(--dim);
+}
+
+@media (max-width: 480px) {
+  .footer-legal {
+    font-size: 9.5px;
+    letter-spacing: -0.2px;
+  }
+}
