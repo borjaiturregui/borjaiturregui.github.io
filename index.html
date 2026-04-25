@@ -31,13 +31,31 @@
   "sameAs": ["https://github.com/borjaiturregui"]
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FGBBX9QL3"></script>
+
+<!--
+  =====================================================================
+  GOOGLE ANALYTICS 4 — CARGA CON CONSENTIMIENTO
+  GA4 solo se activa si el usuario acepta cookies en el banner.
+  Sin aceptación: no se carga ningún script de Google, no hay cookies.
+  Gestionado por assets/js/cookies.js
+  =====================================================================
+-->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2FGBBX9QL3');
+  /* Carga GA4 solo si hay consentimiento previo guardado */
+  (function() {
+    if (localStorage.getItem('cookies_consent') === 'aceptado') {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2FGBBX9QL3';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2FGBBX9QL3');
+    }
+  })();
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
@@ -47,9 +65,25 @@
 <link rel="stylesheet" href="assets/css/sections.css" />
 <link rel="stylesheet" href="assets/css/contact.css" />
 <link rel="stylesheet" href="assets/css/footer.css" />
+<link rel="stylesheet" href="assets/css/cookies.css" />
 </head>
 <body>
 <div class="grid-bg"></div>
+
+<!-- BANNER DE COOKIES -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies" aria-modal="true">
+  <div class="cookie-banner-inner">
+    <p class="cookie-texto">
+      Esta web usa <strong>Google Analytics</strong> para medir visitas de forma anónima.
+      Puedes aceptar o rechazar su uso.
+      <a href="cookies.html">Política de cookies</a>
+    </p>
+    <div class="cookie-acciones">
+      <button class="cookie-btn cookie-btn-rechazar" id="cookieRechazar">Rechazar</button>
+      <button class="cookie-btn cookie-btn-aceptar" id="cookieAceptar">Aceptar</button>
+    </div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -124,6 +158,8 @@
         <span class="service-tag">HTML · CSS</span>
       </div>
       <p class="service-price">Desde 450 €</p>
+      <!-- NUEVO: contexto de precio -->
+      <p class="service-price-context">Una web de 4–5 páginas para un negocio local suele estar entre 450 y 600 €.</p>
     </div>
 
     <!-- Paquete Pro -->
@@ -149,6 +185,8 @@
       </div>
       <p class="service-price">Desde 650 €</p>
       <p class="service-price-note">Incluye web completa</p>
+      <!-- NUEVO: contexto de precio -->
+      <p class="service-price-context">Incluye web completa + auditoría. Para la mayoría de autónomos: 650–800 €.</p>
     </div>
 
   </div>
@@ -177,6 +215,8 @@
         <span class="service-tag">Soporte</span>
       </div>
       <p class="service-price">Desde 35 €/mes</p>
+      <!-- NUEVO: contexto de precio -->
+      <p class="service-price-context">35 €/mes sin tienda · 50 €/mes con WooCommerce.</p>
     </div>
 
   </div>
@@ -296,6 +336,10 @@
         Getxo, Bizkaia &mdash; disponible en remoto
       </span>
     </div>
+    <!-- NUEVO: aviso RGPD junto al formulario -->
+    <p class="form-privacidad">
+      Al enviar aceptas nuestra <a href="privacidad.html">política de privacidad</a>.
+    </p>
   </form>
   <div class="form-exito" id="formExito">
     <div class="exito-icon">✓</div>
@@ -305,17 +349,29 @@
 </section>
 
 </main>
-<!-- FOOTER -->
+
+<!-- FOOTER — ACTUALIZADO con enlaces legales -->
 <footer>
   <p>
     <a href="https://github.com/borjaiturregui" target="_blank" rel="noopener">GitHub</a>
     &nbsp;·&nbsp;
     Getxo, Bizkaia &mdash; disponible en remoto
   </p>
+  <p class="footer-legal">
+    &copy; 2026 Borja Iturregui
+    &nbsp;·&nbsp;
+    <a href="aviso-legal.html">Aviso legal</a>
+    &nbsp;·&nbsp;
+    <a href="privacidad.html">Privacidad</a>
+    &nbsp;·&nbsp;
+    <a href="cookies.html">Cookies</a>
+  </p>
 </footer>
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/reveal.js"></script>
 <script src="assets/js/contact.js"></script>
+<!-- NUEVO: gestión del banner de cookies y carga condicional de GA4 -->
+<script src="assets/js/cookies.js"></script>
 </body>
 </html>
