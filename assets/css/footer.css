@@ -11,19 +11,38 @@ footer span { color: var(--red-hi); }
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--red-hi); }
 
-/* ── Legal: una sola línea ── */
+/* ── Legal ── */
 .footer-legal {
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   font-size: 11px;
   color: var(--dim);
+  white-space: nowrap;
 }
 
-@media (max-width: 480px) {
+/* En escritorio: todo en línea, sin cambios */
+.footer-bloque-izq,
+.footer-sep,
+.footer-bloque-der {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* En móvil: dos líneas limpias */
+@media (max-width: 520px) {
   .footer-legal {
-    font-size: 9.5px;
-    letter-spacing: -0.2px;
+    white-space: normal;
+    line-height: 1.9;
+  }
+
+  .footer-sep {
+    display: none; /* ocultamos el · central */
+  }
+
+  .footer-bloque-izq {
+    display: block;
+  }
+
+  .footer-bloque-der {
+    display: block;
   }
 }
