@@ -1,0 +1,156 @@
+/* ============================================================
+   cookies.css — Estilos del banner de consentimiento de cookies
+   y elementos nuevos: service-price-context, form-privacidad,
+   footer-legal
+   Sigue la estética del portfolio (Share Tech Mono / Syne,
+   paleta oscura, acento rojo vino)
+   ============================================================ */
+
+/* ── CONTEXTO DE PRECIO ── */
+.service-price-context {
+  font-size: 0.78rem;
+  color: #6b6b6b; /* GrisMedio de la guía de marca */
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ── AVISO RGPD JUNTO AL FORMULARIO ── */
+.form-privacidad {
+  margin-top: 12px;
+  font-size: 0.75rem;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+.form-privacidad a {
+  color: #C94E6A; /* RojoVino400 */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.form-privacidad a:hover {
+  color: #B22948; /* RojoVino500 */
+}
+
+/* ── FOOTER LEGAL ── */
+.footer-legal {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #6b6b6b;
+}
+
+.footer-legal a {
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+  color: #C94E6A; /* RojoVino400 */
+}
+
+/* ── BANNER DE COOKIES ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #111111; /* NegroCard */
+  border-top: 1px solid #2A2A2A; /* GrisOscuro */
+  padding: 16px 24px;
+  /* Oculto por defecto; cookies.js lo muestra si no hay decisión guardada */
+  display: none;
+}
+
+.cookie-banner.visible {
+  display: block;
+}
+
+.cookie-banner-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cookie-texto {
+  font-size: 0.82rem;
+  color: #9E9E9E; /* GrisClaro */
+  line-height: 1.6;
+  flex: 1;
+  min-width: 200px;
+}
+
+.cookie-texto strong {
+  color: #FFFFFF;
+}
+
+.cookie-texto a {
+  color: #C94E6A; /* RojoVino400 */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.cookie-texto a:hover {
+  color: #B22948;
+}
+
+.cookie-acciones {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cookie-btn-rechazar {
+  background: transparent;
+  color: #9E9E9E;
+  border-color: #2A2A2A;
+}
+
+.cookie-btn-rechazar:hover {
+  border-color: #6b6b6b;
+  color: #FFFFFF;
+}
+
+.cookie-btn-aceptar {
+  background: #7B1A2E; /* RojoVino700 */
+  color: #FFFFFF;
+  border-color: #7B1A2E;
+}
+
+.cookie-btn-aceptar:hover {
+  background: #9A2340; /* RojoVino600 */
+  border-color: #9A2340;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .cookie-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .cookie-acciones {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
