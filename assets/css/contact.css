@@ -1,7 +1,7 @@
 /* contact.css — Formulario de contacto, estados de éxito y error, honeypot
    Autor: Borja Iturregui — borjaiturregui.github.io */
 
-.contact-intro { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 36px; }
+.contact-intro { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 560px; margin-bottom: 36px; }
 .contact-intro strong { color: var(--white); }
 
 .form-contacto { display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
@@ -15,7 +15,7 @@
 .form-grupo textarea,
 .form-grupo select {
   background: var(--card); border: 1px solid var(--border); border-radius: 4px;
-  padding: 12px 14px; font-family: var(--mono); font-size: 12px; color: var(--white);
+  padding: 12px 14px; font-family: var(--mono); font-size: 13px; color: var(--white);
   outline: none; transition: border-color 0.2s, box-shadow 0.2s;
   width: 100%; -webkit-appearance: none; appearance: none; letter-spacing: 0.5px;
 }
@@ -66,7 +66,7 @@
 }
 .form-exito.visible { display: flex; animation: fadeup 0.4s ease; }
 .form-exito .exito-icon { font-size: 24px; }
-.form-exito p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.form-exito p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 .form-exito strong { color: var(--green); }
 
 /* ── ESTADO ERROR ── */
