@@ -1,18 +1,9 @@
 /* ============================================================
    cookies.css — Estilos del banner de consentimiento de cookies
-   y elementos nuevos: service-price-context, form-privacidad,
-   footer-legal
-   Sigue la estética del portfolio (Share Tech Mono / Syne,
+   y elementos: form-privacidad, footer-legal
+   Sigue la estética del portfolio (JetBrains Mono / Rajdhani,
    paleta oscura, acento rojo vino)
    ============================================================ */
-
-/* ── CONTEXTO DE PRECIO ── */
-.service-price-context {
-  font-size: 0.78rem;
-  color: #6b6b6b; /* GrisMedio de la guía de marca */
-  margin-top: 6px;
-  line-height: 1.5;
-}
 
 /* ── AVISO RGPD JUNTO AL FORMULARIO ── */
 .form-privacidad {
@@ -32,6 +23,14 @@
 .form-privacidad a:hover {
   color: #B22948; /* RojoVino500 */
 }
+
+/* ── ENLACE DE EMAIL ALTERNATIVO EN EL FORM ── */
+.form-email-alt a {
+  color: #C94E6A; /* RojoVino400 */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.form-email-alt a:hover { color: #B22948; }
 
 /* ── FOOTER LEGAL ── */
 .footer-legal {

@@ -3,18 +3,11 @@
 
 const URL_SCRIPT = 'https://script.google.com/macros/s/AKfycbwWkDV17-ZTbuq0EMcqB2pix3DQcVxKEuTh1mP7Rl_sOlVJPRt1JT3YaMJ8rWjiDDNA8Q/exec';
 
-const SERVICIOS = {
-  'web':           'Web o tienda online nueva',
-  'mantenimiento': 'Mantenimiento de web existente',
-  'otro':          'No lo tengo claro aún'
-};
-
 document.getElementById('formContacto').addEventListener('submit', async function(evento) {
   evento.preventDefault();
 
   const nombre   = document.getElementById('nombre').value.trim();
   const email    = document.getElementById('email').value.trim();
-  const servicio = document.getElementById('servicio').value;
   const mensaje  = document.getElementById('mensaje').value.trim();
   const honeypot = document.getElementById('_hp').value;
   const boton    = document.getElementById('btnEnviar');
@@ -28,7 +21,6 @@ document.getElementById('formContacto').addEventListener('submit', async functio
   const datosFormulario = {
     nombre,
     email,
-    servicio: SERVICIOS[servicio] || servicio,
     mensaje,
     _honeypot: honeypot
   };

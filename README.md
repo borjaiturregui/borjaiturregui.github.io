@@ -1,49 +1,46 @@
-# Portafolio personal 🧑🏻‍💻
+# borjaiturregui.github.io
 
-Portfolio personal de Borja Iturregui — desarrollador web.
+Portfolio personal de Borja Iturregui — administración de sistemas y redes.
 
-🌐 **[borjaiturregui.github.io](https://borjaiturregui.github.io)**
-
----
+Sitio estático (HTML/CSS/JS) desplegado en GitHub Pages. Presenta el perfil
+técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 
 ## Estructura
 
 ```
 .
-├── index.html                  # Portfolio principal
-├── aviso-legal.html            # Aviso legal (LSSI-CE)
-├── cookies.html                # Política de cookies
-├── privacidad.html             # Política de privacidad (GDPR)
-├── og-image.png                # Imagen Open Graph
+├── index.html              # Página principal (perfil, áreas, proyectos, contacto)
+├── aviso-legal.html        # Aviso legal (LSSI-CE)
+├── privacidad.html         # Política de privacidad (RGPD)
+├── cookies.html            # Política de cookies
 ├── favicon.svg
+├── og-image.png
 ├── robots.txt
 ├── sitemap.xml
-├── README.md
 └── assets/
     ├── css/
-    │   ├── base.css            # Estilos globales
-    │   ├── nav.css             # Barra de navegación
-    │   ├── hero.css            # Sección hero
-    │   ├── sections.css        # Servicios y proyectos
-    │   ├── contact.css         # Formulario de contacto
-    │   ├── footer.css          # Footer
-    │   └── cookies.css         # Banner y gestión de cookies
+    │   ├── base.css        # Variables, reset, fondo, animaciones
+    │   ├── nav.css         # Navegación
+    │   ├── hero.css        # Cabecera y botones
+    │   ├── sections.css    # Perfil, áreas y proyectos
+    │   ├── contact.css     # Formulario de contacto
+    │   ├── footer.css      # Pie de página
+    │   └── cookies.css     # Banner de cookies y elementos legales
     └── js/
-        ├── nav.js              # Menú burger (móvil)
-        ├── reveal.js           # Animaciones scroll
-        ├── contact.js          # Gestión del formulario
-        └── cookies.js          # Consentimiento de cookies y carga condicional de GA4
+        ├── nav.js          # Menú móvil
+        ├── reveal.js       # Animación de aparición al hacer scroll
+        ├── contact.js      # Envío del formulario (Google Apps Script)
+        └── cookies.js      # Consentimiento y carga condicional de GA4
 ```
 
-**Frontend:** HTML5 · CSS3 modular · JavaScript vanilla  
-**Tipografía:** Google Fonts (Syne, Share Tech Mono)  
-**Analítica:** Google Analytics (GA4)  
-**Formulario:** Google Apps Script (webhook) con protección anti-spam  
-**Cookies:** Consentimiento GDPR · Carga condicional GA4 · localStorage  
-**Legal:** Aviso legal · Política de privacidad · Política de cookies (LSSI-CE)  
-**SEO:** Open Graph · JSON-LD · Twitter Card · Sitemap · Robots.txt  
-**Hosting:** GitHub Pages  
+## Identidad visual
 
----
+Estética terminal oscura según la guía de marca personal v3:
+fondo negro, acento rojo vino (#7B1A2E / #B22948), tipografías
+Rajdhani (interfaz) y JetBrains Mono (datos técnicos y prompt `> borja`).
 
-*En evolución activa — nuevos proyectos de forma periódica.*
+## Privacidad
+
+Google Analytics 4 se carga únicamente tras consentimiento explícito
+en el banner de cookies. El formulario de contacto envía los datos a
+Google Apps Script.
