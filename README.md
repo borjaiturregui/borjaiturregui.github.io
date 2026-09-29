@@ -9,7 +9,7 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 
 ```
 .
-├── index.html              # Página principal (perfil, áreas, proyectos)
+├── index.html              # Página principal (perfil, áreas, proyectos, contacto)
 ├── aviso-legal.html        # Aviso legal (LSSI-CE)
 ├── privacidad.html         # Política de privacidad (RGPD)
 ├── favicon.svg
@@ -23,7 +23,7 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
     │   ├── base.css        # Variables, reset, fondo, animaciones
     │   ├── nav.css         # Navegación
     │   ├── hero.css        # Cabecera y botones
-    │   ├── sections.css    # Perfil, áreas y proyectos
+    │   ├── sections.css    # Áreas, proyectos y contacto
     │   ├── footer.css      # Pie de página
     │   └── legal.css       # Páginas legales
     └── js/
