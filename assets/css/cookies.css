@@ -1,36 +1,8 @@
 /* ============================================================
    cookies.css — Estilos del banner de consentimiento de cookies
-   y elementos: form-privacidad, form-email-alt
    Sigue la estética del portfolio (JetBrains Mono / Rajdhani,
    paleta oscura, acento rojo vino)
    ============================================================ */
-
-/* ── AVISO RGPD JUNTO AL FORMULARIO ── */
-.form-privacidad {
-  margin-top: 12px;
-  font-size: 0.75rem;
-  color: #6b6b6b;
-  line-height: 1.5;
-}
-
-.form-privacidad a {
-  color: #C94E6A; /* RojoVino400 */
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s;
-}
-
-.form-privacidad a:hover {
-  color: #B22948; /* RojoVino500 */
-}
-
-/* ── ENLACE DE EMAIL ALTERNATIVO EN EL FORM ── */
-.form-email-alt a {
-  color: #C94E6A; /* RojoVino400 */
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.form-email-alt a:hover { color: #B22948; }
 
 /* ── BANNER DE COOKIES ── */
 .cookie-banner {

@@ -9,7 +9,7 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 
 ```
 .
-├── index.html              # Página principal (perfil, áreas, proyectos, contacto)
+├── index.html              # Página principal (perfil, áreas, proyectos)
 ├── aviso-legal.html        # Aviso legal (LSSI-CE)
 ├── privacidad.html         # Política de privacidad (RGPD)
 ├── cookies.html            # Política de cookies
@@ -25,14 +25,12 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
     │   ├── nav.css         # Navegación
     │   ├── hero.css        # Cabecera y botones
     │   ├── sections.css    # Perfil, áreas y proyectos
-    │   ├── contact.css     # Formulario de contacto
     │   ├── footer.css      # Pie de página
     │   ├── cookies.css     # Banner de cookies y elementos legales
     │   └── legal.css       # Páginas legales
     └── js/
         ├── nav.js          # Menú móvil
         ├── reveal.js       # Animación de aparición al hacer scroll
-        ├── contact.js      # Envío del formulario (Google Apps Script)
         ├── consent.js      # Consentimiento y carga condicional de GA4 (en el <head>)
         ├── cookies.js      # Banner de cookies
         └── cookies-page.js # Botón de retirar consentimiento (cookies.html)
@@ -49,7 +47,7 @@ Rajdhani (interfaz) y JetBrains Mono (datos técnicos y prompt `> borja`).
 Google Analytics 4 se carga únicamente tras consentimiento explícito
 en el banner de cookies; al retirarlo se borran las cookies `_ga`.
 Las tipografías se sirven desde el propio sitio (sin Google Fonts).
-El formulario de contacto envía los datos a Google Apps Script.
+El sitio no tiene formularios ni recoge datos introducidos por el usuario.
 
 ## Seguridad
 
