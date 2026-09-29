@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'none'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Borja Iturregui — Administración de sistemas y redes</title>
 <meta name="description" content="Perfil técnico en administración de sistemas, redes y soporte, con experiencia en infraestructura, despliegue web y resolución de incidencias. Linux, Windows Server, redes y desarrollo web." />
@@ -45,8 +45,8 @@
 }
 </script>
 
-<!-- Consentimiento de cookies: marca <html class="js"> y carga GA4 solo si ya se aceptó -->
-<script src="assets/js/consent.js" data-autoload-ga></script>
+<!-- Marca <html class="js"> antes de pintar (animaciones de aparición) -->
+<script src="assets/js/init.js"></script>
 
 <link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
@@ -54,25 +54,9 @@
 <link rel="stylesheet" href="assets/css/hero.css" />
 <link rel="stylesheet" href="assets/css/sections.css" />
 <link rel="stylesheet" href="assets/css/footer.css" />
-<link rel="stylesheet" href="assets/css/cookies.css" />
 </head>
 <body>
 <div class="grid-bg"></div>
-
-<!-- BANNER DE COOKIES -->
-<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de cookies">
-  <div class="cookie-banner-inner">
-    <p class="cookie-texto">
-      Esta web usa <strong>Google Analytics</strong> para medir visitas con datos seudonimizados, solo si lo aceptas.
-      Puedes aceptar o rechazar su uso.
-      <a href="cookies.html">Política de cookies</a>
-    </p>
-    <div class="cookie-acciones">
-      <button type="button" class="cookie-btn cookie-btn-rechazar" id="cookieRechazar">Rechazar</button>
-      <button type="button" class="cookie-btn cookie-btn-aceptar" id="cookieAceptar">Aceptar</button>
-    </div>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -271,15 +255,11 @@
     &nbsp;·&nbsp;
     <a href="privacidad.html">Privacidad</a>
     &nbsp;·&nbsp;
-    <a href="cookies.html">Cookies</a>
-    &nbsp;·&nbsp;
     &copy; 2026
   </p>
 </footer>
 
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/reveal.js"></script>
-<!-- Banner de cookies (la lógica de consentimiento está en consent.js) -->
-<script src="assets/js/cookies.js"></script>
 </body>
 </html>
