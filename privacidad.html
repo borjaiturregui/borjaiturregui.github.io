@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Política de privacidad — Borja Iturregui</title>
 <meta name="description" content="Política de privacidad de Borja Iturregui — cómo se tratan los datos recogidos a través del formulario de contacto." />
 <meta name="robots" content="noindex, follow" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/nav.css" />
 <link rel="stylesheet" href="assets/css/hero.css" />
@@ -17,111 +16,7 @@
 <link rel="stylesheet" href="assets/css/contact.css" />
 <link rel="stylesheet" href="assets/css/footer.css" />
 <link rel="stylesheet" href="assets/css/cookies.css" />
-<style>
-  .legal-wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 80px 24px 100px;
-  }
-
-  .legal-volver {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #6b6b6b;
-    text-decoration: none;
-    margin-bottom: 48px;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    transition: color 0.2s;
-  }
-
-  .legal-volver:hover { color: #C94E6A; }
-  .legal-volver::before { content: '←'; }
-
-  .legal-etiqueta {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 0.75rem;
-    color: #C94E6A;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .legal-titulo {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
-
-  .legal-fecha {
-    font-size: 0.8rem;
-    color: #6b6b6b;
-    margin-bottom: 56px;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-  }
-
-  .legal-seccion { margin-bottom: 40px; }
-
-  .legal-seccion h2 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .legal-seccion p,
-  .legal-seccion li {
-    font-size: 0.9rem;
-    color: #9E9E9E;
-    line-height: 1.8;
-  }
-
-  .legal-seccion ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .legal-seccion ul li {
-    padding-left: 16px;
-    position: relative;
-    margin-bottom: 6px;
-  }
-
-  .legal-seccion ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #7B1A2E;
-  }
-
-  .legal-separador {
-    border: none;
-    border-top: 1px solid #2A2A2A;
-    margin: 40px 0;
-  }
-
-  .legal-destacado {
-    background: #111111;
-    border-left: 2px solid #7B1A2E;
-    padding: 16px 20px;
-    border-radius: 0 6px 6px 0;
-    margin-top: 12px;
-  }
-
-  .legal-destacado p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #9E9E9E;
-  }
-</style>
+<link rel="stylesheet" href="assets/css/legal.css" />
 </head>
 <body>
 <div class="grid-bg"></div>
@@ -155,13 +50,12 @@
 
     <p class="legal-etiqueta">Legal</p>
     <h1 class="legal-titulo">Política de privacidad</h1>
-    <p class="legal-fecha">Última actualización: abril 2026</p>
+    <p class="legal-fecha">Última actualización: septiembre 2026</p>
 
     <div class="legal-seccion">
       <h2>1. Responsable del tratamiento</h2>
       <ul>
         <li>Responsable: Borja Iturregui</li>
-        <li>NIF: _______________</li>
         <li>Domicilio: Getxo, Bizkaia</li>
         <li>Correo electrónico: contacto.borjaiturregui@gmail.com</li>
         <li>Sitio web: borjaiturregui.github.io</li>
@@ -178,9 +72,19 @@
       <ul>
         <li>Nombre</li>
         <li>Correo electrónico</li>
-        <li>Tipo de servicio de interés</li>
         <li>Mensaje libre</li>
       </ul>
+      <p>
+        Solo si aceptas las cookies de análisis, <strong>Google Analytics 4</strong> recoge
+        datos de navegación seudonimizados (páginas visitadas, tipo de dispositivo y
+        navegador, ubicación aproximada y un identificador aleatorio guardado en la cookie
+        <code>_ga</code>). Más detalle en la <a href="cookies.html" class="legal-enlace">política de cookies</a>.
+      </p>
+      <p>
+        El alojamiento (GitHub Pages) registra de forma técnica la dirección IP de cada
+        visita para servir la web y protegerla frente a abusos. Las tipografías se sirven
+        desde este mismo sitio, sin conexiones a Google Fonts.
+      </p>
       <p>
         No se recogen datos especialmente sensibles ni datos de menores de 14 años.
         Si eres menor de 14 años, no utilices el formulario de contacto.
@@ -192,8 +96,10 @@
     <div class="legal-seccion">
       <h2>3. Finalidad del tratamiento</h2>
       <p>
-        Los datos facilitados se utilizan exclusivamente para gestionar y responder
+        Los datos del formulario se utilizan exclusivamente para gestionar y responder
         las consultas recibidas a través del formulario de contacto.
+        Los datos de Google Analytics se utilizan solo para conocer, de forma agregada,
+        cuántas visitas recibe la web y cómo se navega por ella.
         No se utilizarán para ninguna otra finalidad sin consentimiento expreso.
       </p>
     </div>
@@ -206,7 +112,13 @@
         El tratamiento de tus datos se basa en el consentimiento del interesado,
         de acuerdo con el artículo 6.1.a del Reglamento General de Protección
         de Datos (RGPD). El envío del formulario implica el consentimiento
-        para el tratamiento de los datos con la finalidad indicada.
+        para el tratamiento de los datos con la finalidad indicada. La analítica
+        solo se activa si aceptas las cookies en el banner.
+      </p>
+      <p>
+        Puedes retirar tu consentimiento en cualquier momento sin que ello afecte a la
+        licitud del tratamiento previo: escribiéndome para el formulario, o desde la
+        <a href="cookies.html" class="legal-enlace">política de cookies</a> para la analítica.
       </p>
     </div>
 
@@ -215,9 +127,10 @@
     <div class="legal-seccion">
       <h2>5. Plazo de conservación</h2>
       <p>
-        Los datos se conservarán el tiempo necesario para resolver la consulta y,
-        como máximo, durante 1 año desde el último contacto sin actividad.
+        Los datos del formulario se conservarán el tiempo necesario para resolver la
+        consulta y, como máximo, durante 1 año desde el último contacto sin actividad.
         Transcurrido ese plazo, serán eliminados de forma segura.
+        Las cookies de Google Analytics caducan a los 2 años o cuando retiras el consentimiento.
       </p>
     </div>
 
@@ -232,7 +145,15 @@
         Los datos del formulario se almacenan temporalmente a través de
         <strong>Google Apps Script</strong> y <strong>Google Sheets</strong>,
         bajo los términos de privacidad de Google LLC. Google actúa como
-        encargado del tratamiento.
+        encargado del tratamiento. Si aceptas las cookies, Google LLC también
+        trata los datos de <strong>Google Analytics</strong>. La web se aloja en
+        <strong>GitHub Pages</strong> (GitHub, Inc.).
+      </p>
+      <p>
+        Google LLC y GitHub, Inc. pueden tratar los datos en Estados Unidos. Estas
+        transferencias internacionales se amparan en la decisión de adecuación de la
+        Comisión Europea sobre el marco de privacidad de datos UE-EE. UU.
+        (EU-US Data Privacy Framework).
       </p>
     </div>
 
@@ -255,7 +176,7 @@
           <strong>contacto.borjaiturregui@gmail.com</strong> o por escrito a Getxo, Bizkaia.
           Dispones también de reclamación ante la
           <strong>Agencia Española de Protección de Datos</strong> en
-          <a href="https://www.aepd.es" target="_blank" rel="noopener" style="color:#C94E6A;">www.aepd.es</a>.
+          <a href="https://www.aepd.es" target="_blank" rel="noopener" class="legal-enlace">www.aepd.es</a>.
         </p>
       </div>
     </div>

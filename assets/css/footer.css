@@ -7,42 +7,23 @@ footer {
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
 }
 footer p { font-size: 11px; color: var(--dim); }
-footer span { color: var(--red-hi); }
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: var(--red-hi); }
 
 /* ── Legal ── */
 .footer-legal {
   width: 100%;
-  font-size: 11px;
-  color: var(--dim);
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: #6b6b6b;
   white-space: nowrap;
 }
+.footer-legal a { color: #6b6b6b; }
+.footer-legal a:hover { color: #C94E6A; /* RojoVino400 */ }
 
-/* En escritorio: todo en línea, sin cambios */
-.footer-bloque-izq,
-.footer-sep,
-.footer-bloque-der {
-  display: inline;
-  white-space: nowrap;
-}
-
-/* En móvil: dos líneas limpias */
 @media (max-width: 520px) {
   .footer-legal {
     white-space: normal;
     line-height: 1.9;
-  }
-
-  .footer-sep {
-    display: none; /* ocultamos el · central */
-  }
-
-  .footer-bloque-izq {
-    display: block;
-  }
-
-  .footer-bloque-der {
-    display: block;
   }
 }

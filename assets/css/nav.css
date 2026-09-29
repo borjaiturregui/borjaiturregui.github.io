@@ -44,9 +44,11 @@ nav {
 .nav-drawer {
   display: none; flex-direction: column;
   background: rgba(0,0,0,0.97); border-top: 1px solid var(--border);
-  max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s;
+  max-height: 0; overflow: hidden; visibility: hidden;
+  transition: max-height 0.35s ease, padding 0.2s, visibility 0s linear 0.35s;
 }
-.nav-drawer.open { max-height: 380px; padding: 8px 0; }
+/* visibility: hidden saca los enlaces del orden de tabulación con el menú cerrado */
+.nav-drawer.open { max-height: 380px; padding: 8px 0; visibility: visible; transition-delay: 0s; }
 .nav-drawer a {
   color: var(--muted); text-decoration: none; font-size: 12px;
   letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px;

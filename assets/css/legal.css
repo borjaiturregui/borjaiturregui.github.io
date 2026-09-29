@@ -1,0 +1,195 @@
+/* legal.css — Estilos de las páginas legales (aviso legal, privacidad, cookies)
+   Autor: Borja Iturregui — borjaiturregui.github.io */
+
+.legal-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+.legal-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #6b6b6b;
+  text-decoration: none;
+  margin-bottom: 48px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  transition: color 0.2s;
+}
+
+.legal-volver:hover { color: #C94E6A; }
+.legal-volver::before { content: '←'; }
+
+.legal-etiqueta {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: #C94E6A;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.legal-titulo {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.legal-fecha {
+  font-size: 0.8rem;
+  color: #6b6b6b;
+  margin-bottom: 56px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.legal-seccion { margin-bottom: 40px; }
+
+.legal-seccion h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.legal-seccion p,
+.legal-seccion li {
+  font-size: 0.9rem;
+  color: #9E9E9E;
+  line-height: 1.8;
+}
+
+.legal-seccion ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-seccion ul li {
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.legal-seccion ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #7B1A2E;
+}
+
+.legal-separador {
+  border: none;
+  border-top: 1px solid #2A2A2A;
+  margin: 40px 0;
+}
+
+/* Tabla de cookies */
+.cookie-tabla-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+  border-radius: 8px;
+  border: 1px solid #2A2A2A;
+}
+
+.cookie-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  color: #9E9E9E;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.cookie-tabla thead th {
+  background: #111111;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #2A2A2A;
+  white-space: nowrap;
+}
+
+.cookie-tabla tbody td {
+  padding: 11px 14px;
+  border-bottom: 1px solid #2A2A2A;
+  vertical-align: top;
+}
+
+.cookie-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.cookie-tabla tbody tr:hover td {
+  background: #0f0f0f;
+}
+
+/* Botón de retirar consentimiento */
+.btn-retirar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #2A2A2A;
+  border-radius: 6px;
+  color: #9E9E9E;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-retirar:hover {
+  border-color: #C94E6A;
+  color: #C94E6A;
+}
+
+.btn-retirar-ok {
+  display: none;
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: #4CAF50;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+.btn-retirar-ok.visible { display: block; }
+
+.legal-destacado {
+  background: #111111;
+  border-left: 2px solid #7B1A2E;
+  padding: 16px 20px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 12px;
+}
+
+.legal-destacado p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9E9E9E;
+}
+
+.btn-retirar:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Enlaces dentro del texto legal */
+.legal-enlace { color: #C94E6A; }
+
+.legal-nota { margin-top: 16px; }
+.legal-nota-amplia { margin-top: 24px; }
+
+.legal-seccion code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85em;
+  color: #ffffff;
+}

@@ -9,11 +9,10 @@
 @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
 
 .form-grupo { display: flex; flex-direction: column; gap: 7px; }
-.form-grupo label { font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+.form-grupo label { font-family: var(--mono); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
 
 .form-grupo input,
-.form-grupo textarea,
-.form-grupo select {
+.form-grupo textarea {
   background: var(--card); border: 1px solid var(--border); border-radius: 4px;
   padding: 12px 14px; font-family: var(--mono); font-size: 13px; color: var(--white);
   outline: none; transition: border-color 0.2s, box-shadow 0.2s;
@@ -22,16 +21,9 @@
 .form-grupo input::placeholder,
 .form-grupo textarea::placeholder { color: var(--dim); }
 .form-grupo input:focus,
-.form-grupo textarea:focus,
-.form-grupo select:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(123,26,46,0.15); }
+.form-grupo textarea:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(123,26,46,0.15); }
 
 .form-grupo textarea { resize: vertical; min-height: 130px; line-height: 1.7; }
-.form-grupo select {
-  color: var(--muted); background-color: var(--card);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
-}
-.form-grupo select option { background: var(--card); color: var(--white); }
 
 .form-footer { display: flex; flex-direction: column; gap: 12px; }
 
