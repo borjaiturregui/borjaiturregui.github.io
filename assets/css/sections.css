@@ -68,7 +68,7 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .project-card.featured { grid-column: 1 / -1; }
 .project-card.client { border-left: 3px solid var(--red-hi); }
 
-.proj-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 8px; }
+.proj-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 8px; overflow-wrap: anywhere; }
 .proj-name { font-family: var(--display); font-size: 21px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .proj-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 .proj-result {
@@ -80,7 +80,10 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .stack-chip { font-family: var(--mono); font-size: 10px; padding: 3px 8px; background: var(--red-dim); border: 1px solid rgba(178,41,72,0.3); border-radius: 2px; color: var(--red-hi); letter-spacing: 0.5px; }
 .stack-chip.neutral { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--muted); }
 
-.proj-status { font-family: var(--mono); position: absolute; top: 14px; right: 14px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+/* La etiqueta (LIVE) flota a la derecha en vez de ir superpuesta: el texto que no cabe
+   a su lado baja de línea, así nunca queda debajo aunque la pantalla sea estrecha
+   o el texto esté ampliado. Los márgenes negativos la mantienen a 14px del borde. */
+.proj-status { font-family: var(--mono); float: right; margin: -8px -8px 8px 12px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
 .status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
 
 /* ── CONTACTO ── */
@@ -101,7 +104,5 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .contact-notas { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
 .contact-notas li { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-left: 16px; position: relative; }
 .contact-notas li::before { content: '→'; position: absolute; left: 0; color: var(--red-hi); }
-.contact-notas a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.contact-notas a:hover { color: var(--red-hi); }
 .contact-privacidad { font-size: 12px; color: #6b6b6b; line-height: 1.6; margin-top: 8px; }
 .contact-privacidad a { color: #C94E6A; text-underline-offset: 3px; }
