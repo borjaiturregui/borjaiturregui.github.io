@@ -1,4 +1,4 @@
-/* legal.css — Estilos de las páginas legales (aviso legal, privacidad, cookies)
+/* legal.css — Estilos de las páginas legales (aviso legal y privacidad)
    Autor: Borja Iturregui — borjaiturregui.github.io */
 
 .legal-wrap {
@@ -91,78 +91,6 @@
   margin: 40px 0;
 }
 
-/* Tabla de cookies */
-.cookie-tabla-wrap {
-  overflow-x: auto;
-  margin-top: 16px;
-  border-radius: 8px;
-  border: 1px solid #2A2A2A;
-}
-
-.cookie-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-  color: #9E9E9E;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-}
-
-.cookie-tabla thead th {
-  background: #111111;
-  color: #ffffff;
-  font-weight: 700;
-  padding: 12px 14px;
-  text-align: left;
-  border-bottom: 1px solid #2A2A2A;
-  white-space: nowrap;
-}
-
-.cookie-tabla tbody td {
-  padding: 11px 14px;
-  border-bottom: 1px solid #2A2A2A;
-  vertical-align: top;
-}
-
-.cookie-tabla tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.cookie-tabla tbody tr:hover td {
-  background: #0f0f0f;
-}
-
-/* Botón de retirar consentimiento */
-.btn-retirar {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  padding: 10px 20px;
-  background: transparent;
-  border: 1px solid #2A2A2A;
-  border-radius: 6px;
-  color: #9E9E9E;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.btn-retirar:hover {
-  border-color: #C94E6A;
-  color: #C94E6A;
-}
-
-.btn-retirar-ok {
-  display: none;
-  margin-top: 12px;
-  font-size: 0.82rem;
-  color: #4CAF50;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-}
-
-.btn-retirar-ok.visible { display: block; }
-
 .legal-destacado {
   background: #111111;
   border-left: 2px solid #7B1A2E;
@@ -177,19 +105,5 @@
   color: #9E9E9E;
 }
 
-.btn-retirar:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
 /* Enlaces dentro del texto legal */
 .legal-enlace { color: #C94E6A; }
-
-.legal-nota { margin-top: 16px; }
-.legal-nota-amplia { margin-top: 24px; }
-
-.legal-seccion code {
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.85em;
-  color: #ffffff;
-}

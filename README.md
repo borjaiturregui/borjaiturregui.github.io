@@ -12,7 +12,6 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 ├── index.html              # Página principal (perfil, áreas, proyectos)
 ├── aviso-legal.html        # Aviso legal (LSSI-CE)
 ├── privacidad.html         # Política de privacidad (RGPD)
-├── cookies.html            # Política de cookies
 ├── favicon.svg
 ├── og-image.png
 ├── robots.txt
@@ -26,14 +25,11 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
     │   ├── hero.css        # Cabecera y botones
     │   ├── sections.css    # Perfil, áreas y proyectos
     │   ├── footer.css      # Pie de página
-    │   ├── cookies.css     # Banner de cookies y elementos legales
     │   └── legal.css       # Páginas legales
     └── js/
         ├── nav.js          # Menú móvil
         ├── reveal.js       # Animación de aparición al hacer scroll
-        ├── consent.js      # Consentimiento y carga condicional de GA4 (en el <head>)
-        ├── cookies.js      # Banner de cookies
-        └── cookies-page.js # Botón de retirar consentimiento (cookies.html)
+        └── init.js         # Marca <html class="js"> (en el <head>)
 ```
 
 ## Identidad visual
@@ -44,14 +40,13 @@ Rajdhani (interfaz) y JetBrains Mono (datos técnicos y prompt `> borja`).
 
 ## Privacidad
 
-Google Analytics 4 se carga únicamente tras consentimiento explícito
-en el banner de cookies; al retirarlo se borran las cookies `_ga`.
-Las tipografías se sirven desde el propio sitio (sin Google Fonts).
-El sitio no tiene formularios ni recoge datos introducidos por el usuario.
+El sitio no usa cookies, analítica ni formularios, y no hace peticiones a
+terceros: las tipografías se sirven desde el propio sitio.
 
 ## Seguridad
 
 Cada página declara una Content-Security-Policy en un `<meta>` (GitHub Pages
 no permite cabeceras propias). No hay scripts ni estilos en línea: cualquier
 script o estilo nuevo debe ir en `assets/`, y cualquier dominio externo nuevo
-debe añadirse a la CSP de la página correspondiente.
+debe añadirse a la CSP de la página correspondiente (y a la política de
+privacidad si trata datos personales).

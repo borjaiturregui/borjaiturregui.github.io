@@ -37,8 +37,6 @@ body::after {
   pointer-events: none; z-index: 100;
 }
 
-.hidden { display: none !important; }
-
 .grid-bg {
   position: fixed; inset: 0;
   background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
@@ -58,7 +56,7 @@ body::after {
 .delay-4  { animation-delay: 0.50s; }
 
 /* ── SCROLL REVEAL ──
-   Solo se oculta el contenido si hay JS (consent.js añade .js a <html>);
+   Solo se oculta el contenido si hay JS (init.js añade .js a <html>);
    sin JS todo queda visible. */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .js .reveal.visible { opacity: 1; transform: translateY(0); }
