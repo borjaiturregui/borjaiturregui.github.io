@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.googletagmanager.com; style-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; font-src 'self'; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; object-src 'none'; base-uri 'self'; form-action 'self'" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Borja Iturregui — Administración de sistemas y redes</title>
 <meta name="description" content="Perfil técnico en administración de sistemas, redes y soporte, con experiencia en infraestructura, despliegue web y resolución de incidencias. Linux, Windows Server, redes y desarrollo web." />
@@ -16,9 +17,14 @@
 <meta property="og:title" content="Borja Iturregui — Administración de sistemas y redes" />
 <meta property="og:description" content="Perfil técnico en administración de sistemas, redes y soporte, con experiencia en infraestructura y desarrollo web." />
 <meta property="og:locale" content="es_ES" />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="https://borjaiturregui.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Borja Iturregui — Administración de sistemas y redes" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Borja Iturregui — Administración de sistemas y redes" />
 <meta name="twitter:description" content="Perfil técnico en administración de sistemas, redes y soporte." />
+<meta name="twitter:image" content="https://borjaiturregui.github.io/og-image.png" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,33 +45,10 @@
 }
 </script>
 
-<!--
-  =====================================================================
-  GOOGLE ANALYTICS 4 — CARGA CON CONSENTIMIENTO
-  GA4 solo se activa si el usuario acepta cookies en el banner.
-  Sin aceptación: no se carga ningún script de Google, no hay cookies.
-  Gestionado por assets/js/cookies.js
-  =====================================================================
--->
-<script>
-  /* Carga GA4 solo si hay consentimiento previo guardado */
-  (function() {
-    if (localStorage.getItem('cookies_consent') === 'aceptado') {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-2FGBBX9QL3';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2FGBBX9QL3');
-    }
-  })();
-</script>
+<!-- Consentimiento de cookies: marca <html class="js"> y carga GA4 solo si ya se aceptó -->
+<script src="assets/js/consent.js" data-autoload-ga></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/nav.css" />
 <link rel="stylesheet" href="assets/css/hero.css" />
@@ -78,16 +61,16 @@
 <div class="grid-bg"></div>
 
 <!-- BANNER DE COOKIES -->
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies" aria-modal="true">
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de cookies">
   <div class="cookie-banner-inner">
     <p class="cookie-texto">
-      Esta web usa <strong>Google Analytics</strong> para medir visitas de forma anónima.
+      Esta web usa <strong>Google Analytics</strong> para medir visitas con datos seudonimizados, solo si lo aceptas.
       Puedes aceptar o rechazar su uso.
       <a href="cookies.html">Política de cookies</a>
     </p>
     <div class="cookie-acciones">
-      <button class="cookie-btn cookie-btn-rechazar" id="cookieRechazar">Rechazar</button>
-      <button class="cookie-btn cookie-btn-aceptar" id="cookieAceptar">Aceptar</button>
+      <button type="button" class="cookie-btn cookie-btn-rechazar" id="cookieRechazar">Rechazar</button>
+      <button type="button" class="cookie-btn cookie-btn-aceptar" id="cookieAceptar">Aceptar</button>
     </div>
   </div>
 </div>
@@ -289,20 +272,20 @@
   <p class="contact-intro reveal reveal-delay-1">
     ¿Tienes una oferta, un proyecto o una consulta técnica? <strong>Escríbeme y te respondo.</strong>
   </p>
-  <form class="form-contacto reveal reveal-delay-2" id="formContacto">
+  <form class="form-contacto reveal reveal-delay-2" id="formContacto" method="post">
     <div class="form-row">
       <div class="form-grupo">
         <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required maxlength="100" autocomplete="name">
       </div>
       <div class="form-grupo">
         <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required maxlength="254" autocomplete="email">
       </div>
     </div>
     <div class="form-grupo">
       <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" placeholder="Cuéntame en qué puedo ayudarte." required></textarea>
+      <textarea id="mensaje" name="mensaje" placeholder="Cuéntame en qué puedo ayudarte." required maxlength="5000"></textarea>
     </div>
     <div class="form-hp" aria-hidden="true">
       <input type="text" id="_hp" name="_hp" tabindex="-1" autocomplete="off">
@@ -328,11 +311,11 @@
       Al enviar aceptas la <a href="privacidad.html">política de privacidad</a>.
     </p>
   </form>
-  <div class="form-exito" id="formExito">
+  <div class="form-exito" id="formExito" role="status">
     <div class="exito-icon">✓</div>
     <p><strong>Mensaje enviado.</strong><br>Te respondo en menos de 24 horas.</p>
   </div>
-  <div class="form-error" id="formError"></div>
+  <div class="form-error" id="formError" role="alert"></div>
 </section>
 
 </main>
@@ -355,7 +338,7 @@
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/reveal.js"></script>
 <script src="assets/js/contact.js"></script>
-<!-- Gestión del banner de cookies y carga condicional de GA4 -->
+<!-- Banner de cookies (la lógica de consentimiento está en consent.js) -->
 <script src="assets/js/cookies.js"></script>
 </body>
 </html>

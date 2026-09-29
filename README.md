@@ -18,19 +18,24 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 ├── robots.txt
 ├── sitemap.xml
 └── assets/
+    ├── fonts/              # Rajdhani y JetBrains Mono (woff2, servidas localmente)
     ├── css/
+    │   ├── fonts.css       # @font-face de las tipografías locales
     │   ├── base.css        # Variables, reset, fondo, animaciones
     │   ├── nav.css         # Navegación
     │   ├── hero.css        # Cabecera y botones
     │   ├── sections.css    # Perfil, áreas y proyectos
     │   ├── contact.css     # Formulario de contacto
     │   ├── footer.css      # Pie de página
-    │   └── cookies.css     # Banner de cookies y elementos legales
+    │   ├── cookies.css     # Banner de cookies y elementos legales
+    │   └── legal.css       # Páginas legales
     └── js/
         ├── nav.js          # Menú móvil
         ├── reveal.js       # Animación de aparición al hacer scroll
         ├── contact.js      # Envío del formulario (Google Apps Script)
-        └── cookies.js      # Consentimiento y carga condicional de GA4
+        ├── consent.js      # Consentimiento y carga condicional de GA4 (en el <head>)
+        ├── cookies.js      # Banner de cookies
+        └── cookies-page.js # Botón de retirar consentimiento (cookies.html)
 ```
 
 ## Identidad visual
@@ -42,5 +47,13 @@ Rajdhani (interfaz) y JetBrains Mono (datos técnicos y prompt `> borja`).
 ## Privacidad
 
 Google Analytics 4 se carga únicamente tras consentimiento explícito
-en el banner de cookies. El formulario de contacto envía los datos a
-Google Apps Script.
+en el banner de cookies; al retirarlo se borran las cookies `_ga`.
+Las tipografías se sirven desde el propio sitio (sin Google Fonts).
+El formulario de contacto envía los datos a Google Apps Script.
+
+## Seguridad
+
+Cada página declara una Content-Security-Policy en un `<meta>` (GitHub Pages
+no permite cabeceras propias). No hay scripts ni estilos en línea: cualquier
+script o estilo nuevo debe ir en `assets/`, y cualquier dominio externo nuevo
+debe añadirse a la CSP de la página correspondiente.

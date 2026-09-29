@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aviso legal — Borja Iturregui</title>
 <meta name="description" content="Aviso legal de Borja Iturregui — administración de sistemas y redes en Getxo, Bizkaia." />
 <meta name="robots" content="noindex, follow" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/base.css" />
 <link rel="stylesheet" href="assets/css/nav.css" />
 <link rel="stylesheet" href="assets/css/hero.css" />
@@ -17,105 +16,7 @@
 <link rel="stylesheet" href="assets/css/contact.css" />
 <link rel="stylesheet" href="assets/css/footer.css" />
 <link rel="stylesheet" href="assets/css/cookies.css" />
-<style>
-  /* Estilos específicos de las páginas legales */
-  .legal-wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 80px 24px 100px;
-  }
-
-  .legal-volver {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #6b6b6b;
-    text-decoration: none;
-    margin-bottom: 48px;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    transition: color 0.2s;
-  }
-
-  .legal-volver:hover {
-    color: #C94E6A;
-  }
-
-  .legal-volver::before {
-    content: '←';
-  }
-
-  .legal-etiqueta {
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 0.75rem;
-    color: #C94E6A;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .legal-titulo {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 8px;
-    line-height: 1.2;
-  }
-
-  .legal-fecha {
-    font-size: 0.8rem;
-    color: #6b6b6b;
-    margin-bottom: 56px;
-    font-family: 'JetBrains Mono', 'Courier New', monospace;
-  }
-
-  .legal-seccion {
-    margin-bottom: 40px;
-  }
-
-  .legal-seccion h2 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .legal-seccion p,
-  .legal-seccion li {
-    font-size: 0.9rem;
-    color: #9E9E9E;
-    line-height: 1.8;
-  }
-
-  .legal-seccion ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .legal-seccion ul li {
-    padding-left: 16px;
-    position: relative;
-    margin-bottom: 6px;
-  }
-
-  .legal-seccion ul li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #7B1A2E;
-  }
-
-  .legal-separador {
-    border: none;
-    border-top: 1px solid #2A2A2A;
-    margin: 40px 0;
-  }
-</style>
+<link rel="stylesheet" href="assets/css/legal.css" />
 </head>
 <body>
 <div class="grid-bg"></div>
@@ -149,7 +50,7 @@
 
     <p class="legal-etiqueta">Legal</p>
     <h1 class="legal-titulo">Aviso legal</h1>
-    <p class="legal-fecha">Última actualización: abril 2026</p>
+    <p class="legal-fecha">Última actualización: septiembre 2026</p>
 
     <div class="legal-seccion">
       <h2>1. Datos identificativos del titular</h2>
@@ -159,7 +60,6 @@
       </p>
       <ul>
         <li>Titular: Borja Iturregui</li>
-        <li>NIF: _______________</li>
         <li>Domicilio: Getxo, Bizkaia</li>
         <li>Correo electrónico: contacto.borjaiturregui@gmail.com</li>
         <li>Sitio web: borjaiturregui.github.io</li>
