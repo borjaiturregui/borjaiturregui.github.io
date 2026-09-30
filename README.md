@@ -1,15 +1,21 @@
 # borjaiturregui.github.io
 
-Portfolio personal de Borja Iturregui — administración de sistemas y redes.
+Portafolio personal de Borja Iturregui — web y sistemas.
 
-Sitio estático (HTML/CSS/JS) desplegado en GitHub Pages. Presenta el perfil
-técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
+Sitio estático (HTML, CSS y JavaScript) publicado en GitHub Pages, sin
+herramientas de compilación ni dependencias. Secciones de la página principal:
+
+1. Portada
+2. Yo
+3. Habilidades (con iconos)
+4. Proyectos
+5. Contacto (correo y GitHub)
 
 ## Estructura
 
 ```
 .
-├── index.html              # Página principal (perfil, áreas, proyectos, contacto)
+├── index.html              # Página principal (portada, yo, habilidades, proyectos, contacto)
 ├── aviso-legal.html        # Aviso legal (LSSI-CE)
 ├── privacidad.html         # Política de privacidad (RGPD)
 ├── favicon.svg
@@ -18,12 +24,13 @@ técnico, áreas de trabajo y proyectos. Sin framework ni dependencias de build.
 ├── sitemap.xml
 └── assets/
     ├── fonts/              # Rajdhani y JetBrains Mono (woff2, servidas localmente)
+    ├── icons/              # Iconos SVG de habilidades (skill-icons, MIT; licencia incluida)
     ├── css/
     │   ├── fonts.css       # @font-face de las tipografías locales
     │   ├── base.css        # Variables, reset, fondo, animaciones
     │   ├── nav.css         # Navegación
     │   ├── hero.css        # Cabecera y botones
-    │   ├── sections.css    # Áreas, proyectos y contacto
+    │   ├── sections.css    # Yo, habilidades, proyectos y contacto
     │   ├── footer.css      # Pie de página
     │   └── legal.css       # Páginas legales
     └── js/
@@ -41,7 +48,7 @@ Rajdhani (interfaz) y JetBrains Mono (datos técnicos y prompt `> borja`).
 ## Privacidad
 
 El sitio no usa cookies, analítica ni formularios, y no hace peticiones a
-terceros: las tipografías se sirven desde el propio sitio.
+terceros: las tipografías y los iconos se sirven desde el propio sitio.
 
 ## Seguridad
 
@@ -50,3 +57,8 @@ no permite cabeceras propias). No hay scripts ni estilos en línea: cualquier
 script o estilo nuevo debe ir en `assets/`, y cualquier dominio externo nuevo
 debe añadirse a la CSP de la página correspondiente (y a la política de
 privacidad si trata datos personales).
+
+## Créditos
+
+Iconos: [skill-icons](https://github.com/tandpfun/skill-icons) (MIT). La licencia
+está en `assets/icons/LICENSE-skill-icons.txt`.
