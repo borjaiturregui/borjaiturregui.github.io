@@ -7,10 +7,11 @@
   --border:  #1e1e1e;
   --red:     #7B1A2E;
   --red-hi:  #B22948;
+  --red-text: #DB5872; /* rojo para texto pequeño: ≥ 4,5:1 sobre negro, tarjetas y etiquetas rojas */
   --red-dim: rgba(123, 26, 46, 0.18);
   --white:   #ffffff;
   --muted:   #a0a0a0;
-  --dim:     #666666;
+  --dim:     #8a8a8a;
   --green:   #3fb950;
   --mono:    'JetBrains Mono', 'Courier New', monospace;
   --display: 'Rajdhani', sans-serif;
@@ -43,6 +44,9 @@ body::after {
   background-size: 40px 40px;
   opacity: 0.35; z-index: 0; pointer-events: none;
 }
+
+/* ── FOCO VISIBLE ── */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--red-text); outline-offset: 3px; }
 
 /* ── KEYFRAMES ── */
 @keyframes fadeup { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }

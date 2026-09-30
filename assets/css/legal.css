@@ -12,20 +12,20 @@
   align-items: center;
   gap: 6px;
   font-size: 0.8rem;
-  color: #6b6b6b;
+  color: var(--dim);
   text-decoration: none;
   margin-bottom: 48px;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   transition: color 0.2s;
 }
 
-.legal-volver:hover { color: #C94E6A; }
+.legal-volver:hover { color: var(--red-text); }
 .legal-volver::before { content: '←'; }
 
 .legal-etiqueta {
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-size: 0.75rem;
-  color: #C94E6A;
+  color: var(--red-text);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -42,7 +42,7 @@
 
 .legal-fecha {
   font-size: 0.8rem;
-  color: #6b6b6b;
+  color: var(--dim);
   margin-bottom: 56px;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
 }
@@ -106,4 +106,4 @@
 }
 
 /* Enlaces dentro del texto legal */
-.legal-enlace { color: #C94E6A; }
+.legal-enlace { color: var(--red-text); }
