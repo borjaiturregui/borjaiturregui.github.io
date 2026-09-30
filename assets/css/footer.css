@@ -6,20 +6,20 @@ footer {
   max-width: 960px; margin: 0 auto; padding: 24px;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
 }
-footer p { font-size: 11px; color: var(--dim); }
+footer p { font-size: 12px; color: var(--dim); }
 footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-footer a:hover { color: var(--red-hi); }
+footer a:hover { color: var(--red-text); }
 
 /* ── Legal ── */
 .footer-legal {
   width: 100%;
   margin-top: 8px;
   font-size: 0.75rem;
-  color: #6b6b6b;
+  color: var(--dim);
   white-space: nowrap;
 }
-.footer-legal a { color: #6b6b6b; }
-.footer-legal a:hover { color: #C94E6A; /* RojoVino400 */ }
+.footer-legal a { color: var(--dim); }
+.footer-legal a:hover { color: var(--red-text); }
 
 @media (max-width: 520px) {
   .footer-legal {

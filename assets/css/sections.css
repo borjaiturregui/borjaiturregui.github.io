@@ -1,4 +1,4 @@
-/* sections.css — Secciones de áreas, proyectos y contacto
+/* sections.css — Secciones Yo, habilidades, proyectos y contacto
    Autor: Borja Iturregui — borjaiturregui.github.io */
 
 /* ── ESTRUCTURA DE SECCIONES ── */
@@ -6,9 +6,13 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
 .section-header::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 .section-title { font-family: var(--display); font-size: 30px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-.section-num { font-family: var(--mono); font-size: 11px; color: var(--red-hi); letter-spacing: 2px; }
+.section-num { font-family: var(--mono); font-size: 12px; color: var(--red-text); letter-spacing: 2px; }
 
-/* ── ÁREAS ── */
+/* ── YO ── */
+.yo-texto { max-width: 640px; }
+.yo-texto p { font-size: 16px; color: var(--muted); line-height: 1.7; }
+
+/* ── ÁREAS / HABILIDADES ── */
 .areas-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
 }
@@ -35,17 +39,23 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .area-list li::before { content: '→'; position: absolute; left: 0; color: var(--red-hi); }
 .area-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .area-tag {
-  font-family: var(--mono); font-size: 10px; padding: 4px 9px;
+  font-family: var(--mono); font-size: 12px; padding: 4px 9px;
   background: rgba(255,255,255,0.04); border: 1px solid var(--border);
   border-radius: 2px; color: var(--muted); letter-spacing: 0.5px;
 }
+
+/* Habilidades: iconos de 32 px y etiquetas de texto del mismo alto */
+.skill-tags { align-items: center; gap: 8px; }
+.skill-icon { display: inline-flex; width: 32px; height: 32px; }
+.skill-icon img { width: 32px; height: 32px; display: block; border-radius: 6px; }
+.skill-tags .area-tag { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; font-size: 12px; }
 
 /* ── PROYECTOS ── */
 .projects-block { margin-bottom: 40px; }
 .projects-block:last-child { margin-bottom: 0; }
 
 .block-label {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
   color: var(--muted); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
 }
 .block-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -68,22 +78,22 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
 .project-card.featured { grid-column: 1 / -1; }
 .project-card.client { border-left: 3px solid var(--red-hi); }
 
-.proj-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-hi); margin-bottom: 8px; overflow-wrap: anywhere; }
+.proj-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--red-text); margin-bottom: 8px; overflow-wrap: anywhere; }
 .proj-name { font-family: var(--display); font-size: 21px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .proj-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
 .proj-result {
-  font-family: var(--mono); font-size: 11px; color: var(--green);
+  font-family: var(--mono); font-size: 12px; color: var(--green);
   display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; line-height: 1.6;
 }
 .proj-result::before { content: "▸"; flex-shrink: 0; margin-top: 1px; }
 .proj-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-.stack-chip { font-family: var(--mono); font-size: 10px; padding: 3px 8px; background: var(--red-dim); border: 1px solid rgba(178,41,72,0.3); border-radius: 2px; color: var(--red-hi); letter-spacing: 0.5px; }
+.stack-chip { font-family: var(--mono); font-size: 12px; padding: 3px 8px; background: var(--red-dim); border: 1px solid rgba(178,41,72,0.3); border-radius: 2px; color: var(--red-text); letter-spacing: 0.5px; }
 .stack-chip.neutral { background: rgba(255,255,255,0.04); border-color: var(--border); color: var(--muted); }
 
 /* La etiqueta (LIVE) flota a la derecha en vez de ir superpuesta: el texto que no cabe
    a su lado baja de línea, así nunca queda debajo aunque la pantalla sea estrecha
    o el texto esté ampliado. Los márgenes negativos la mantienen a 14px del borde. */
-.proj-status { font-family: var(--mono); float: right; margin: -8px -8px 8px 12px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+.proj-status { font-family: var(--mono); float: right; margin: -8px -8px 8px 12px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
 .status-live { background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3); color: var(--green); }
 
 /* ── CONTACTO ── */
@@ -95,14 +105,14 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
   border-radius: 4px; padding: 24px; max-width: 640px;
   display: flex; flex-direction: column; gap: 10px;
 }
-.contact-label { font-family: var(--mono); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+.contact-label { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
 .contact-email {
   font-family: var(--mono); font-size: clamp(15px, 4vw, 20px); font-weight: 700;
   color: var(--white); text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s;
 }
-.contact-email:hover, .contact-email:focus-visible { color: var(--red-hi); }
+.contact-email:hover, .contact-email:focus-visible { color: var(--red-text); }
 .contact-notas { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
 .contact-notas li { font-family: var(--mono); font-size: 12px; color: var(--muted); padding-left: 16px; position: relative; }
 .contact-notas li::before { content: '→'; position: absolute; left: 0; color: var(--red-hi); }
-.contact-privacidad { font-size: 12px; color: #6b6b6b; line-height: 1.6; margin-top: 8px; }
-.contact-privacidad a { color: #C94E6A; text-underline-offset: 3px; }
+.contact-privacidad { font-size: 12px; color: var(--dim); line-height: 1.6; margin-top: 8px; }
+.contact-privacidad a { color: var(--red-text); text-underline-offset: 3px; }
