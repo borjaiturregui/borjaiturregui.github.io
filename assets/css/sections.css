@@ -44,11 +44,11 @@ section { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padd
   border-radius: 2px; color: var(--muted); letter-spacing: 0.5px;
 }
 
-/* Habilidades: iconos de 32 px y etiquetas de texto del mismo alto */
-.skill-tags { align-items: center; gap: 8px; }
-.skill-icon { display: inline-flex; width: 32px; height: 32px; }
-.skill-icon img { width: 32px; height: 32px; display: block; border-radius: 6px; }
-.skill-tags .area-tag { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; font-size: 12px; }
+/* Habilidades: chip con icono pequeño (20 px) y nombre siempre visible, 32 px de alto */
+.skill-tags { list-style: none; gap: 8px; align-items: center; }
+.skill-tags .area-tag.skill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; font-size: 12px; }
+.skill-tags .area-tag.skill:has(img) { padding-left: 6px; }
+.skill-tags .area-tag.skill img { width: 20px; height: 20px; border-radius: 4px; display: block; }
 
 /* ── PROYECTOS ── */
 .projects-block { margin-bottom: 40px; }
